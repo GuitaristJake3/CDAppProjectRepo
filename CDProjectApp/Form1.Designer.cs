@@ -38,6 +38,8 @@ namespace CDProjectApp
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.genreLabel = new System.Windows.Forms.Label();
+            this.genreComboBox = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,7 +51,8 @@ namespace CDProjectApp
             this.fileToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 33);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
+            this.menuStrip1.Size = new System.Drawing.Size(533, 36);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -109,13 +112,43 @@ namespace CDProjectApp
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
+            // genreLabel
+            // 
+            this.genreLabel.AutoSize = true;
+            this.genreLabel.Location = new System.Drawing.Point(99, 68);
+            this.genreLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.genreLabel.Name = "genreLabel";
+            this.genreLabel.Size = new System.Drawing.Size(39, 13);
+            this.genreLabel.TabIndex = 1;
+            this.genreLabel.Text = "Genre:";
+            // 
+            // genreComboBox
+            // 
+            this.genreComboBox.FormattingEnabled = true;
+            this.genreComboBox.Items.AddRange(new object[] {
+            "Metal",
+            "Folk",
+            "Jazz",
+            "Classical",
+            "Rap"});
+            this.genreComboBox.SelectedIndex = 0;
+            this.genreComboBox.Location = new System.Drawing.Point(162, 66);
+            this.genreComboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.genreComboBox.Name = "genreComboBox";
+            this.genreComboBox.Size = new System.Drawing.Size(82, 21);
+            this.genreComboBox.TabIndex = 2;
+            this.genreComboBox.SelectedIndexChanged += new System.EventHandler(this.genreComboBox_SelectedIndexChanged);
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(533, 292);
+            this.Controls.Add(this.genreComboBox);
+            this.Controls.Add(this.genreLabel);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.menuStrip1.ResumeLayout(false);
@@ -136,6 +169,8 @@ namespace CDProjectApp
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem closeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.Label genreLabel;
+        private System.Windows.Forms.ComboBox genreComboBox;
     }
 }
 

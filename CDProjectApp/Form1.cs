@@ -12,9 +12,20 @@ namespace CDProjectApp
 {
     public partial class Form1 : Form
     {
+        string currentGenre;
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void fileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void genreComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            currentGenre = genreComboBox.Items[genreComboBox.SelectedIndex].ToString();
         }
     }
 }
