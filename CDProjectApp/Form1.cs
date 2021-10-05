@@ -16,5 +16,10 @@ namespace CDProjectApp
         {
             InitializeComponent();
         }
+
+        private void fileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
