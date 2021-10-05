@@ -31,6 +31,17 @@ namespace CDProjectApp
         {
             currentCD = new CDDataClass(currentGenre);
             cdList.Add(currentCD);      //Next we would display this list in a list box
+            saveToolStripMenuItem.Enabled = true;
+        }
+
+        private void newToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            genreComboBox.Visible = true;
+            genreLabel.Visible = true;
+            addDataToListButton.Visible = true;
+            addDataToListButton.Enabled = false;
+            cdList = new List<CDDataClass>();
+            genreComboBox.SelectedIndex = 0;
         }
     }
 }
