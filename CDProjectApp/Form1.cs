@@ -30,7 +30,7 @@ namespace CDProjectApp
         private void addDataToListButton_Click(object sender, EventArgs e)
         {
             currentCD = new CDDataClass(currentGenre);
-            cdList.Add(currentCD);      //Next we would display this list in a list box
+            cdList.Add(currentCD);      //Current CD added to CD list. Next we would display this list in a list box
             saveToolStripMenuItem.Enabled = true;
         }
 
@@ -38,6 +38,12 @@ namespace CDProjectApp
         {
             genreComboBox.Visible = true;
             genreLabel.Visible = true;
+            artistLabel.Visible = true;
+            artistTextBox.Visible = true;
+            albumLabel.Visible = true;
+            albumTextBox.Visible = true;
+            releaseLabel.Visible = true;
+            releaseMaskedTextBox.Visible = true;
             addDataToListButton.Visible = true;
             addDataToListButton.Enabled = false;
             cdList = new List<CDDataClass>();

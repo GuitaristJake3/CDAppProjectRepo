@@ -41,19 +41,24 @@ namespace CDProjectApp
             this.genreLabel = new System.Windows.Forms.Label();
             this.genreComboBox = new System.Windows.Forms.ComboBox();
             this.addDataToListButton = new System.Windows.Forms.Button();
+            this.artistLabel = new System.Windows.Forms.Label();
+            this.albumLabel = new System.Windows.Forms.Label();
+            this.releaseLabel = new System.Windows.Forms.Label();
+            this.artistTextBox = new System.Windows.Forms.TextBox();
+            this.albumTextBox = new System.Windows.Forms.TextBox();
+            this.releaseMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
-            this.menuStrip1.Size = new System.Drawing.Size(533, 31);
+            this.menuStrip1.Size = new System.Drawing.Size(533, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -68,57 +73,57 @@ namespace CDProjectApp
             this.closeToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(54, 29);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 22);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // newToolStripMenuItem
             // 
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.newToolStripMenuItem.Text = "New";
             this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.openToolStripMenuItem.Text = "Open";
             // 
             // saveToolStripMenuItem
             // 
-            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Enabled = false;
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveToolStripMenuItem.Text = "Save";
             // 
             // shareToolStripMenuItem
             // 
             this.shareToolStripMenuItem.Name = "shareToolStripMenuItem";
-            this.shareToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.shareToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.shareToolStripMenuItem.Text = "Share";
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.deleteToolStripMenuItem.Text = "Delete";
             // 
             // closeToolStripMenuItem
             // 
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.closeToolStripMenuItem.Text = "Close";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
             // genreLabel
             // 
             this.genreLabel.AutoSize = true;
-            this.genreLabel.Location = new System.Drawing.Point(99, 68);
+            this.genreLabel.Location = new System.Drawing.Point(64, 69);
             this.genreLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.genreLabel.Name = "genreLabel";
             this.genreLabel.Size = new System.Drawing.Size(39, 13);
@@ -154,7 +159,7 @@ namespace CDProjectApp
             // addDataToListButton
             // 
             this.addDataToListButton.Enabled = false;
-            this.addDataToListButton.Location = new System.Drawing.Point(151, 127);
+            this.addDataToListButton.Location = new System.Drawing.Point(366, 68);
             this.addDataToListButton.Name = "addDataToListButton";
             this.addDataToListButton.Size = new System.Drawing.Size(75, 23);
             this.addDataToListButton.TabIndex = 3;
@@ -163,11 +168,73 @@ namespace CDProjectApp
             this.addDataToListButton.Visible = false;
             this.addDataToListButton.Click += new System.EventHandler(this.addDataToListButton_Click);
             // 
+            // artistLabel
+            // 
+            this.artistLabel.AutoSize = true;
+            this.artistLabel.Location = new System.Drawing.Point(64, 103);
+            this.artistLabel.Name = "artistLabel";
+            this.artistLabel.Size = new System.Drawing.Size(65, 13);
+            this.artistLabel.TabIndex = 4;
+            this.artistLabel.Text = "Album Artist:";
+            this.artistLabel.Visible = false;
+            // 
+            // albumLabel
+            // 
+            this.albumLabel.AutoSize = true;
+            this.albumLabel.Location = new System.Drawing.Point(64, 139);
+            this.albumLabel.Name = "albumLabel";
+            this.albumLabel.Size = new System.Drawing.Size(62, 13);
+            this.albumLabel.TabIndex = 5;
+            this.albumLabel.Text = "Album Title:";
+            this.albumLabel.Visible = false;
+            // 
+            // releaseLabel
+            // 
+            this.releaseLabel.AutoSize = true;
+            this.releaseLabel.Location = new System.Drawing.Point(64, 174);
+            this.releaseLabel.Name = "releaseLabel";
+            this.releaseLabel.Size = new System.Drawing.Size(74, 13);
+            this.releaseLabel.TabIndex = 6;
+            this.releaseLabel.Text = "Release Year:";
+            this.releaseLabel.Visible = false;
+            // 
+            // artistTextBox
+            // 
+            this.artistTextBox.Location = new System.Drawing.Point(162, 103);
+            this.artistTextBox.Name = "artistTextBox";
+            this.artistTextBox.Size = new System.Drawing.Size(100, 20);
+            this.artistTextBox.TabIndex = 7;
+            this.artistTextBox.Visible = false;
+            // 
+            // albumTextBox
+            // 
+            this.albumTextBox.Location = new System.Drawing.Point(162, 136);
+            this.albumTextBox.Name = "albumTextBox";
+            this.albumTextBox.Size = new System.Drawing.Size(100, 20);
+            this.albumTextBox.TabIndex = 8;
+            this.albumTextBox.Visible = false;
+            // 
+            // releaseMaskedTextBox
+            // 
+            this.releaseMaskedTextBox.Location = new System.Drawing.Point(162, 167);
+            this.releaseMaskedTextBox.Mask = "0000";
+            this.releaseMaskedTextBox.Name = "releaseMaskedTextBox";
+            this.releaseMaskedTextBox.Size = new System.Drawing.Size(100, 20);
+            this.releaseMaskedTextBox.TabIndex = 9;
+            this.releaseMaskedTextBox.ValidatingType = typeof(System.DateTime);
+            this.releaseMaskedTextBox.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(533, 292);
+            this.Controls.Add(this.releaseMaskedTextBox);
+            this.Controls.Add(this.albumTextBox);
+            this.Controls.Add(this.artistTextBox);
+            this.Controls.Add(this.releaseLabel);
+            this.Controls.Add(this.albumLabel);
+            this.Controls.Add(this.artistLabel);
             this.Controls.Add(this.addDataToListButton);
             this.Controls.Add(this.genreComboBox);
             this.Controls.Add(this.genreLabel);
@@ -197,6 +264,12 @@ namespace CDProjectApp
         private System.Windows.Forms.Label genreLabel;
         private System.Windows.Forms.ComboBox genreComboBox;
         private System.Windows.Forms.Button addDataToListButton;
+        private System.Windows.Forms.Label artistLabel;
+        private System.Windows.Forms.Label albumLabel;
+        private System.Windows.Forms.Label releaseLabel;
+        private System.Windows.Forms.TextBox artistTextBox;
+        private System.Windows.Forms.TextBox albumTextBox;
+        private System.Windows.Forms.MaskedTextBox releaseMaskedTextBox;
     }
 }
 
