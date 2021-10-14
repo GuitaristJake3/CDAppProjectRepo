@@ -130,11 +130,19 @@ namespace CDProjectApp
             // 
             this.genreComboBox.FormattingEnabled = true;
             this.genreComboBox.Items.AddRange(new object[] {
-            "Metal",
-            "Folk",
-            "Jazz",
+            "Acoustic",
+            "Blues",
             "Classical",
-            "Rap"});
+            "Country",
+            "Electronic",
+            "Jazz",
+            "Metal",
+            "Pop",
+            "Punk",
+            "Rap",
+            "Rock",
+            "World",
+            "Other"});
             this.genreComboBox.Location = new System.Drawing.Point(162, 66);
             this.genreComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.genreComboBox.Name = "genreComboBox";
