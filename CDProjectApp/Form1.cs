@@ -12,7 +12,7 @@ namespace CDProjectApp
 {
     public partial class Form1 : Form
     {
-        string currentGenre;
+        string currentGenre, currentArtist, currentAlbum, currentReleaseYear, currentRunTime, currentTracks, currentLocation;
         CDDataClass currentCD;
         List<CDDataClass> cdList;   //List of objects of the class CDDataClass is defined as class variable
         public Form1()
@@ -24,12 +24,11 @@ namespace CDProjectApp
         private void genreComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             currentGenre = genreComboBox.Items[genreComboBox.SelectedIndex].ToString();     //Current genre is whatever is selected in the genreComboBox
-            addDataToListButton.Enabled = true;
         }
 
         private void addDataToListButton_Click(object sender, EventArgs e)
         {
-            currentCD = new CDDataClass(currentGenre);
+            currentCD = new CDDataClass(currentGenre);      //Creates new CD with current fields passed as args
             cdList.Add(currentCD);      //Current CD added to CD list. Next we would display this list in a list box
             saveToolStripMenuItem.Enabled = true;
         }
@@ -51,7 +50,6 @@ namespace CDProjectApp
             runTimeLabel.Visible = true;
             runTimeMaskedTextBox.Visible = true;
             addDataToListButton.Visible = true;
-            addDataToListButton.Enabled = false;
             cdList = new List<CDDataClass>();
             genreComboBox.SelectedIndex = 0;    //First item in range of genreComboBox values will be the initial value
         }
