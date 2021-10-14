@@ -23,14 +23,14 @@ namespace CDProjectApp
 
         private void genreComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            currentGenre = genreComboBox.Items[genreComboBox.SelectedIndex].ToString();
+            currentGenre = genreComboBox.Items[genreComboBox.SelectedIndex].ToString();     //Current genre is whatever is selected in the genreComboBox
             addDataToListButton.Enabled = true;
         }
 
         private void addDataToListButton_Click(object sender, EventArgs e)
         {
             currentCD = new CDDataClass(currentGenre);
-            cdList.Add(currentCD);      //Next we would display this list in a list box
+            cdList.Add(currentCD);      //Current CD added to CD list. Next we would display this list in a list box
             saveToolStripMenuItem.Enabled = true;
         }
 
@@ -38,10 +38,22 @@ namespace CDProjectApp
         {
             genreComboBox.Visible = true;
             genreLabel.Visible = true;
+            artistLabel.Visible = true;
+            artistTextBox.Visible = true;
+            albumLabel.Visible = true;
+            albumTextBox.Visible = true;
+            releaseLabel.Visible = true;
+            releaseMaskedTextBox.Visible = true;
+            locationLabel.Visible = true;
+            locationTextBox.Visible = true;
+            tracksLabel.Visible = true;
+            tracksUpDown.Visible = true;
+            runTimeLabel.Visible = true;
+            runTimeMaskedTextBox.Visible = true;
             addDataToListButton.Visible = true;
             addDataToListButton.Enabled = false;
             cdList = new List<CDDataClass>();
-            genreComboBox.SelectedIndex = 0;
+            genreComboBox.SelectedIndex = 0;    //First item in range of genreComboBox values will be the initial value
         }
     }
 }
