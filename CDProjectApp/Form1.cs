@@ -44,6 +44,12 @@ namespace CDProjectApp
             albumTextBox.Visible = true;
             releaseLabel.Visible = true;
             releaseMaskedTextBox.Visible = true;
+            locationLabel.Visible = true;
+            locationTextBox.Visible = true;
+            tracksLabel.Visible = true;
+            tracksUpDown.Visible = true;
+            runTimeLabel.Visible = true;
+            runTimeMaskedTextBox.Visible = true;
             addDataToListButton.Visible = true;
             addDataToListButton.Enabled = false;
             cdList = new List<CDDataClass>();

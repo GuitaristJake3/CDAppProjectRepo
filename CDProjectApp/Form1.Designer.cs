@@ -47,7 +47,14 @@ namespace CDProjectApp
             this.artistTextBox = new System.Windows.Forms.TextBox();
             this.albumTextBox = new System.Windows.Forms.TextBox();
             this.releaseMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.locationLabel = new System.Windows.Forms.Label();
+            this.locationTextBox = new System.Windows.Forms.TextBox();
+            this.tracksLabel = new System.Windows.Forms.Label();
+            this.runTimeLabel = new System.Windows.Forms.Label();
+            this.tracksUpDown = new System.Windows.Forms.NumericUpDown();
+            this.runTimeMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tracksUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -58,7 +65,7 @@ namespace CDProjectApp
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
-            this.menuStrip1.Size = new System.Drawing.Size(533, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(422, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -123,7 +130,7 @@ namespace CDProjectApp
             // genreLabel
             // 
             this.genreLabel.AutoSize = true;
-            this.genreLabel.Location = new System.Drawing.Point(64, 69);
+            this.genreLabel.Location = new System.Drawing.Point(21, 52);
             this.genreLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.genreLabel.Name = "genreLabel";
             this.genreLabel.Size = new System.Drawing.Size(39, 13);
@@ -148,10 +155,10 @@ namespace CDProjectApp
             "Rock",
             "World",
             "Other"});
-            this.genreComboBox.Location = new System.Drawing.Point(162, 66);
+            this.genreComboBox.Location = new System.Drawing.Point(120, 49);
             this.genreComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.genreComboBox.Name = "genreComboBox";
-            this.genreComboBox.Size = new System.Drawing.Size(82, 21);
+            this.genreComboBox.Size = new System.Drawing.Size(100, 21);
             this.genreComboBox.TabIndex = 2;
             this.genreComboBox.Visible = false;
             this.genreComboBox.SelectedIndexChanged += new System.EventHandler(this.genreComboBox_SelectedIndexChanged);
@@ -159,7 +166,7 @@ namespace CDProjectApp
             // addDataToListButton
             // 
             this.addDataToListButton.Enabled = false;
-            this.addDataToListButton.Location = new System.Drawing.Point(366, 68);
+            this.addDataToListButton.Location = new System.Drawing.Point(317, 144);
             this.addDataToListButton.Name = "addDataToListButton";
             this.addDataToListButton.Size = new System.Drawing.Size(75, 23);
             this.addDataToListButton.TabIndex = 3;
@@ -171,7 +178,7 @@ namespace CDProjectApp
             // artistLabel
             // 
             this.artistLabel.AutoSize = true;
-            this.artistLabel.Location = new System.Drawing.Point(64, 103);
+            this.artistLabel.Location = new System.Drawing.Point(21, 88);
             this.artistLabel.Name = "artistLabel";
             this.artistLabel.Size = new System.Drawing.Size(65, 13);
             this.artistLabel.TabIndex = 4;
@@ -181,7 +188,7 @@ namespace CDProjectApp
             // albumLabel
             // 
             this.albumLabel.AutoSize = true;
-            this.albumLabel.Location = new System.Drawing.Point(64, 139);
+            this.albumLabel.Location = new System.Drawing.Point(21, 124);
             this.albumLabel.Name = "albumLabel";
             this.albumLabel.Size = new System.Drawing.Size(62, 13);
             this.albumLabel.TabIndex = 5;
@@ -191,7 +198,7 @@ namespace CDProjectApp
             // releaseLabel
             // 
             this.releaseLabel.AutoSize = true;
-            this.releaseLabel.Location = new System.Drawing.Point(64, 174);
+            this.releaseLabel.Location = new System.Drawing.Point(21, 160);
             this.releaseLabel.Name = "releaseLabel";
             this.releaseLabel.Size = new System.Drawing.Size(74, 13);
             this.releaseLabel.TabIndex = 6;
@@ -200,7 +207,7 @@ namespace CDProjectApp
             // 
             // artistTextBox
             // 
-            this.artistTextBox.Location = new System.Drawing.Point(162, 103);
+            this.artistTextBox.Location = new System.Drawing.Point(120, 85);
             this.artistTextBox.Name = "artistTextBox";
             this.artistTextBox.Size = new System.Drawing.Size(100, 20);
             this.artistTextBox.TabIndex = 7;
@@ -208,7 +215,7 @@ namespace CDProjectApp
             // 
             // albumTextBox
             // 
-            this.albumTextBox.Location = new System.Drawing.Point(162, 136);
+            this.albumTextBox.Location = new System.Drawing.Point(120, 121);
             this.albumTextBox.Name = "albumTextBox";
             this.albumTextBox.Size = new System.Drawing.Size(100, 20);
             this.albumTextBox.TabIndex = 8;
@@ -216,19 +223,81 @@ namespace CDProjectApp
             // 
             // releaseMaskedTextBox
             // 
-            this.releaseMaskedTextBox.Location = new System.Drawing.Point(162, 167);
+            this.releaseMaskedTextBox.Location = new System.Drawing.Point(119, 157);
             this.releaseMaskedTextBox.Mask = "0000";
             this.releaseMaskedTextBox.Name = "releaseMaskedTextBox";
-            this.releaseMaskedTextBox.Size = new System.Drawing.Size(100, 20);
+            this.releaseMaskedTextBox.Size = new System.Drawing.Size(101, 20);
             this.releaseMaskedTextBox.TabIndex = 9;
             this.releaseMaskedTextBox.ValidatingType = typeof(System.DateTime);
             this.releaseMaskedTextBox.Visible = false;
+            // 
+            // locationLabel
+            // 
+            this.locationLabel.AutoSize = true;
+            this.locationLabel.Location = new System.Drawing.Point(21, 268);
+            this.locationLabel.Name = "locationLabel";
+            this.locationLabel.Size = new System.Drawing.Size(51, 13);
+            this.locationLabel.TabIndex = 10;
+            this.locationLabel.Text = "Location:";
+            this.locationLabel.Visible = false;
+            // 
+            // locationTextBox
+            // 
+            this.locationTextBox.Location = new System.Drawing.Point(119, 265);
+            this.locationTextBox.Name = "locationTextBox";
+            this.locationTextBox.Size = new System.Drawing.Size(101, 20);
+            this.locationTextBox.TabIndex = 11;
+            this.locationTextBox.Visible = false;
+            // 
+            // tracksLabel
+            // 
+            this.tracksLabel.AutoSize = true;
+            this.tracksLabel.Location = new System.Drawing.Point(21, 232);
+            this.tracksLabel.Name = "tracksLabel";
+            this.tracksLabel.Size = new System.Drawing.Size(91, 13);
+            this.tracksLabel.TabIndex = 12;
+            this.tracksLabel.Text = "Number of tracks:";
+            this.tracksLabel.Visible = false;
+            // 
+            // runTimeLabel
+            // 
+            this.runTimeLabel.AutoSize = true;
+            this.runTimeLabel.Location = new System.Drawing.Point(21, 196);
+            this.runTimeLabel.Name = "runTimeLabel";
+            this.runTimeLabel.Size = new System.Drawing.Size(52, 13);
+            this.runTimeLabel.TabIndex = 13;
+            this.runTimeLabel.Text = "Run time:";
+            this.runTimeLabel.Visible = false;
+            // 
+            // tracksUpDown
+            // 
+            this.tracksUpDown.Location = new System.Drawing.Point(119, 229);
+            this.tracksUpDown.Name = "tracksUpDown";
+            this.tracksUpDown.Size = new System.Drawing.Size(101, 20);
+            this.tracksUpDown.TabIndex = 14;
+            this.tracksUpDown.Visible = false;
+            // 
+            // runTimeMaskedTextBox
+            // 
+            this.runTimeMaskedTextBox.Location = new System.Drawing.Point(120, 193);
+            this.runTimeMaskedTextBox.Mask = "00:00";
+            this.runTimeMaskedTextBox.Name = "runTimeMaskedTextBox";
+            this.runTimeMaskedTextBox.Size = new System.Drawing.Size(100, 20);
+            this.runTimeMaskedTextBox.TabIndex = 15;
+            this.runTimeMaskedTextBox.ValidatingType = typeof(int);
+            this.runTimeMaskedTextBox.Visible = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(533, 292);
+            this.ClientSize = new System.Drawing.Size(422, 320);
+            this.Controls.Add(this.runTimeMaskedTextBox);
+            this.Controls.Add(this.tracksUpDown);
+            this.Controls.Add(this.runTimeLabel);
+            this.Controls.Add(this.tracksLabel);
+            this.Controls.Add(this.locationTextBox);
+            this.Controls.Add(this.locationLabel);
             this.Controls.Add(this.releaseMaskedTextBox);
             this.Controls.Add(this.albumTextBox);
             this.Controls.Add(this.artistTextBox);
@@ -245,6 +314,7 @@ namespace CDProjectApp
             this.Text = "Form1";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tracksUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -270,6 +340,12 @@ namespace CDProjectApp
         private System.Windows.Forms.TextBox artistTextBox;
         private System.Windows.Forms.TextBox albumTextBox;
         private System.Windows.Forms.MaskedTextBox releaseMaskedTextBox;
+        private System.Windows.Forms.Label locationLabel;
+        private System.Windows.Forms.TextBox locationTextBox;
+        private System.Windows.Forms.Label tracksLabel;
+        private System.Windows.Forms.Label runTimeLabel;
+        private System.Windows.Forms.NumericUpDown tracksUpDown;
+        private System.Windows.Forms.MaskedTextBox runTimeMaskedTextBox;
     }
 }
 
