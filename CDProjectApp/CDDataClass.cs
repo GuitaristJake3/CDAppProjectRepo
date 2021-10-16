@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace CDProjectApp
 {
-    class CDDataClass
+    class CD
     {
         string genre;
         //Define a constructor based on values we should have
-        public CDDataClass(string g)
+        public CD(string g)
         {
             genre = g;
         }

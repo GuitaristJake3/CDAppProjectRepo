@@ -86,45 +86,45 @@ namespace CDProjectApp
             // newToolStripMenuItem
             // 
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.newToolStripMenuItem.Text = "New";
             this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.openToolStripMenuItem.Text = "Open";
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Enabled = false;
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.saveToolStripMenuItem.Text = "Save";
             // 
             // shareToolStripMenuItem
             // 
             this.shareToolStripMenuItem.Name = "shareToolStripMenuItem";
-            this.shareToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.shareToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.shareToolStripMenuItem.Text = "Share";
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.deleteToolStripMenuItem.Text = "Delete";
             // 
             // closeToolStripMenuItem
             // 
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.closeToolStripMenuItem.Text = "Close";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
             // genreLabel
@@ -161,7 +161,7 @@ namespace CDProjectApp
             this.genreComboBox.Size = new System.Drawing.Size(100, 21);
             this.genreComboBox.TabIndex = 2;
             this.genreComboBox.Visible = false;
-            this.genreComboBox.SelectedIndexChanged += new System.EventHandler(this.genreComboBox_SelectedIndexChanged);
+            this.genreComboBox.Leave += new System.EventHandler(this.genreComboBox_Leave);
             // 
             // addDataToListButton
             // 
@@ -212,6 +212,7 @@ namespace CDProjectApp
             this.artistTextBox.Size = new System.Drawing.Size(100, 20);
             this.artistTextBox.TabIndex = 7;
             this.artistTextBox.Visible = false;
+            this.artistTextBox.Leave += new System.EventHandler(this.artistTextBox_Leave);
             // 
             // albumTextBox
             // 
@@ -220,6 +221,7 @@ namespace CDProjectApp
             this.albumTextBox.Size = new System.Drawing.Size(100, 20);
             this.albumTextBox.TabIndex = 8;
             this.albumTextBox.Visible = false;
+            this.albumTextBox.Leave += new System.EventHandler(this.albumTextBox_Leave);
             // 
             // releaseMaskedTextBox
             // 
@@ -230,6 +232,7 @@ namespace CDProjectApp
             this.releaseMaskedTextBox.TabIndex = 9;
             this.releaseMaskedTextBox.ValidatingType = typeof(System.DateTime);
             this.releaseMaskedTextBox.Visible = false;
+            this.releaseMaskedTextBox.Leave += new System.EventHandler(this.releaseMaskedTextBox_Leave);
             // 
             // locationLabel
             // 
@@ -248,6 +251,7 @@ namespace CDProjectApp
             this.locationTextBox.Size = new System.Drawing.Size(101, 20);
             this.locationTextBox.TabIndex = 11;
             this.locationTextBox.Visible = false;
+            this.locationTextBox.Leave += new System.EventHandler(this.locationTextBox_Leave);
             // 
             // tracksLabel
             // 
@@ -276,6 +280,7 @@ namespace CDProjectApp
             this.tracksUpDown.Size = new System.Drawing.Size(101, 20);
             this.tracksUpDown.TabIndex = 14;
             this.tracksUpDown.Visible = false;
+            this.tracksUpDown.Leave += new System.EventHandler(this.tracksUpDown_Leave);
             // 
             // runTimeMaskedTextBox
             // 
@@ -286,6 +291,7 @@ namespace CDProjectApp
             this.runTimeMaskedTextBox.TabIndex = 15;
             this.runTimeMaskedTextBox.ValidatingType = typeof(int);
             this.runTimeMaskedTextBox.Visible = false;
+            this.runTimeMaskedTextBox.Leave += new System.EventHandler(this.runTimeMaskedTextBox_Leave);
             // 
             // Form1
             // 
