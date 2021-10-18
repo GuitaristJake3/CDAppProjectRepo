@@ -33,7 +33,7 @@ namespace CDProjectApp
         }
         private void albumTextBox_Leave(object sender, EventArgs e)
         {
-            currentAlbum = albumLabel.Text;
+            currentAlbum = albumTextBox.Text;
         }
         private void releaseMaskedTextBox_Leave(object sender, EventArgs e)
         {
@@ -75,7 +75,6 @@ namespace CDProjectApp
             runTimeMaskedTextBox.Visible = true;
             addDataToListButton.Visible = true;
             cdList = new List<CD>();
-            genreComboBox.SelectedIndex = 0;    //First item in range of genreComboBox values will be the initial value
         }
     }
 }

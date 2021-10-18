@@ -165,7 +165,6 @@ namespace CDProjectApp
             // 
             // addDataToListButton
             // 
-            this.addDataToListButton.Enabled = false;
             this.addDataToListButton.Location = new System.Drawing.Point(317, 144);
             this.addDataToListButton.Name = "addDataToListButton";
             this.addDataToListButton.Size = new System.Drawing.Size(75, 23);
