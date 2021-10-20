@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace CDProjectApp
 {
-    public partial class Form1 : Form
+    public partial class CDLibrary : Form
     {
-        string currentGenre, currentArtist, currentAlbum, currentReleaseYear, currentRunTime, currentLocation;
-        int currentTracks;
+        string currentGenre, currentArtist, currentAlbum, currentRunTime, currentLocation;
+        int currentReleaseYear, currentTracks;
         CD currentCD;      //Creates a new CD object
         List<CD> cdList;   //List of objects of the class CD is defined as class variable
 
-        public Form1()
+        public CDLibrary()
         {
             InitializeComponent();
             cdList = new List<CD>();   //The list is created on program startup
@@ -33,11 +33,11 @@ namespace CDProjectApp
         }
         private void albumTextBox_Leave(object sender, EventArgs e)
         {
-            currentAlbum = albumLabel.Text;
+            currentAlbum = albumTextBox.Text;
         }
         private void releaseMaskedTextBox_Leave(object sender, EventArgs e)
         {
-            currentReleaseYear = releaseMaskedTextBox.Text;
+            currentReleaseYear = Int16.Parse(releaseMaskedTextBox.Text);
         }
         private void runTimeMaskedTextBox_Leave(object sender, EventArgs e)
         {
@@ -53,7 +53,7 @@ namespace CDProjectApp
         }
         private void addDataToListButton_Click(object sender, EventArgs e)
         {
-            currentCD = new CD(currentGenre);      //Creates new CD with current fields passed as args
+            currentCD = new CD(currentGenre, currentArtist, currentAlbum, currentTracks, currentRunTime, currentLocation, currentReleaseYear);      //Creates new CD with current fields passed as args
             cdList.Add(currentCD);      //Current CD added to CD list. Next we would display this list in a list box
             saveToolStripMenuItem.Enabled = true;
         }
@@ -75,7 +75,6 @@ namespace CDProjectApp
             runTimeMaskedTextBox.Visible = true;
             addDataToListButton.Visible = true;
             cdList = new List<CD>();
-            genreComboBox.SelectedIndex = 0;    //First item in range of genreComboBox values will be the initial value
         }
     }
 }

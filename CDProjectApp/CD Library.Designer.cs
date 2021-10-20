@@ -1,7 +1,7 @@
 ﻿
 namespace CDProjectApp
 {
-    partial class Form1
+    partial class CDLibrary
     {
         /// <summary>
         /// Required designer variable.
@@ -165,7 +165,6 @@ namespace CDProjectApp
             // 
             // addDataToListButton
             // 
-            this.addDataToListButton.Enabled = false;
             this.addDataToListButton.Location = new System.Drawing.Point(317, 144);
             this.addDataToListButton.Name = "addDataToListButton";
             this.addDataToListButton.Size = new System.Drawing.Size(75, 23);
@@ -293,7 +292,7 @@ namespace CDProjectApp
             this.runTimeMaskedTextBox.Visible = false;
             this.runTimeMaskedTextBox.Leave += new System.EventHandler(this.runTimeMaskedTextBox_Leave);
             // 
-            // Form1
+            // CDLibrary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -316,8 +315,8 @@ namespace CDProjectApp
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "CDLibrary";
+            this.Text = "CD Library";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tracksUpDown)).EndInit();
