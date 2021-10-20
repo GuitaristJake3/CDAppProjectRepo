@@ -12,8 +12,8 @@ namespace CDProjectApp
 {
     public partial class CDLibrary : Form
     {
-        string currentGenre, currentArtist, currentAlbum, currentReleaseYear, currentRunTime, currentLocation;
-        int currentTracks;
+        string currentGenre, currentArtist, currentAlbum, currentRunTime, currentLocation;
+        int currentReleaseYear, currentTracks;
         CD currentCD;      //Creates a new CD object
         List<CD> cdList;   //List of objects of the class CD is defined as class variable
 
@@ -37,7 +37,7 @@ namespace CDProjectApp
         }
         private void releaseMaskedTextBox_Leave(object sender, EventArgs e)
         {
-            currentReleaseYear = releaseMaskedTextBox.Text;
+            currentReleaseYear = Int16.Parse(releaseMaskedTextBox.Text);
         }
         private void runTimeMaskedTextBox_Leave(object sender, EventArgs e)
         {
@@ -53,7 +53,7 @@ namespace CDProjectApp
         }
         private void addDataToListButton_Click(object sender, EventArgs e)
         {
-            currentCD = new CD(currentGenre, currentArtist, currentAlbum, currentReleaseYear, currentRunTime, currentLocation, currentTracks);      //Creates new CD with current fields passed as args
+            currentCD = new CD(currentGenre, currentArtist, currentAlbum, currentTracks, currentRunTime, currentLocation, currentReleaseYear);      //Creates new CD with current fields passed as args
             cdList.Add(currentCD);      //Current CD added to CD list. Next we would display this list in a list box
             saveToolStripMenuItem.Enabled = true;
         }

@@ -53,6 +53,7 @@
     <Compile Include="CD Library.Designer.cs">
       <DependentUpon>CD Library.cs</DependentUpon>
     </Compile>
+    <Compile Include="General Media.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CD Library.resx">

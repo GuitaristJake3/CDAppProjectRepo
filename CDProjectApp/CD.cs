@@ -6,19 +6,16 @@ using System.Threading.Tasks;
 
 namespace CDProjectApp
 {
-    class CD
+    class CD : General_Media
     {
-        string genre, artist, album, releaseYear, runTime, location;
+        string genre, artist, album;
         int tracks;
         //Define a constructor based on values we should have
-        public CD(string g, string ar, string al, string ry, string rt, string l, int t)
+        public CD(string g, string ar, string al, int t, string rt, string l, int ry) : base(rt, l, ry)
         {
             genre = g;
             artist = ar;
             album = al;
-            releaseYear = ry;
-            runTime = rt;
-            location = l;
             tracks = t;
         }
         public string Genre
@@ -32,18 +29,6 @@ namespace CDProjectApp
         public string Album
         {
             get { return album; }
-        }
-        public string ReleaseYear
-        {
-            get { return releaseYear; }
-        }
-        public string RunTime
-        {
-            get { return runTime; }
-        }
-        public string Location
-        {
-            get { return location; }
         }
         public int Tracks
         {
