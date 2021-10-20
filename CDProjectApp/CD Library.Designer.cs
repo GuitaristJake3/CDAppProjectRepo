@@ -207,6 +207,7 @@ namespace CDProjectApp
             // artistTextBox
             // 
             this.artistTextBox.Location = new System.Drawing.Point(120, 85);
+            this.artistTextBox.MaxLength = 100;
             this.artistTextBox.Name = "artistTextBox";
             this.artistTextBox.Size = new System.Drawing.Size(100, 20);
             this.artistTextBox.TabIndex = 7;
@@ -216,6 +217,7 @@ namespace CDProjectApp
             // albumTextBox
             // 
             this.albumTextBox.Location = new System.Drawing.Point(120, 121);
+            this.albumTextBox.MaxLength = 100;
             this.albumTextBox.Name = "albumTextBox";
             this.albumTextBox.Size = new System.Drawing.Size(100, 20);
             this.albumTextBox.TabIndex = 8;
@@ -246,6 +248,7 @@ namespace CDProjectApp
             // locationTextBox
             // 
             this.locationTextBox.Location = new System.Drawing.Point(119, 265);
+            this.locationTextBox.MaxLength = 100;
             this.locationTextBox.Name = "locationTextBox";
             this.locationTextBox.Size = new System.Drawing.Size(101, 20);
             this.locationTextBox.TabIndex = 11;

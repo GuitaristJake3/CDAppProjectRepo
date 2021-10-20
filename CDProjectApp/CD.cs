@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace CDProjectApp
 {
+    //CD class will inherit from the General_Media class
     class CD : General_Media
     {
+        //Class fields are declared and are private
         string genre, artist, album;
         int tracks;
         //Define a constructor based on values we should have
@@ -18,6 +20,7 @@ namespace CDProjectApp
             album = al;
             tracks = t;
         }
+        //Accessors allow private class fields to be accessed
         public string Genre
         {
             get { return genre; }

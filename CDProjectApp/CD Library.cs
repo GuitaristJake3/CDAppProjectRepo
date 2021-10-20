@@ -37,7 +37,7 @@ namespace CDProjectApp
         }
         private void releaseMaskedTextBox_Leave(object sender, EventArgs e)
         {
-            currentReleaseYear = Int16.Parse(releaseMaskedTextBox.Text);
+            currentReleaseYear = Int16.Parse(releaseMaskedTextBox.Text);    //String representation of int converted to int
         }
         private void runTimeMaskedTextBox_Leave(object sender, EventArgs e)
         {
