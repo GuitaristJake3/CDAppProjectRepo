@@ -53,6 +53,7 @@ namespace CDProjectApp
             this.runTimeLabel = new System.Windows.Forms.Label();
             this.tracksUpDown = new System.Windows.Forms.NumericUpDown();
             this.runTimeMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.saveCDList = new System.Windows.Forms.SaveFileDialog();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tracksUpDown)).BeginInit();
             this.SuspendLayout();
@@ -86,45 +87,46 @@ namespace CDProjectApp
             // newToolStripMenuItem
             // 
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.newToolStripMenuItem.Text = "New";
             this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.openToolStripMenuItem.Text = "Open";
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Enabled = false;
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.saveToolStripMenuItem.Text = "Save";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // shareToolStripMenuItem
             // 
             this.shareToolStripMenuItem.Name = "shareToolStripMenuItem";
-            this.shareToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.shareToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.shareToolStripMenuItem.Text = "Share";
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.deleteToolStripMenuItem.Text = "Delete";
             // 
             // closeToolStripMenuItem
             // 
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.closeToolStripMenuItem.Text = "Close";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
             // genreLabel
@@ -295,6 +297,13 @@ namespace CDProjectApp
             this.runTimeMaskedTextBox.Visible = false;
             this.runTimeMaskedTextBox.Leave += new System.EventHandler(this.runTimeMaskedTextBox_Leave);
             // 
+            // saveCDList
+            // 
+            this.saveCDList.CreatePrompt = true;
+            this.saveCDList.DefaultExt = "csv";
+            this.saveCDList.FileName = "CD Library";
+            this.saveCDList.Filter = "CSV files (*.csv)|*.csv";
+            // 
             // CDLibrary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -354,6 +363,7 @@ namespace CDProjectApp
         private System.Windows.Forms.Label runTimeLabel;
         private System.Windows.Forms.NumericUpDown tracksUpDown;
         private System.Windows.Forms.MaskedTextBox runTimeMaskedTextBox;
+        private System.Windows.Forms.SaveFileDialog saveCDList;
     }
 }
 

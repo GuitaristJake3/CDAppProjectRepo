@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;    //Allows files to be loaded and saved
 
 namespace CDProjectApp
 {
@@ -76,5 +77,25 @@ namespace CDProjectApp
             addDataToListButton.Visible = true;
             cdList = new List<CD>();
         }
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (saveCDList.ShowDialog() == DialogResult.OK)
+            {
+                TextWriter tw = new StreamWriter(saveCDList.FileName);
+                foreach (CD cd in cdList)
+                {
+                    tw.Write(cd.Genre + ",");
+                    tw.Write(cd.Artist + ",");
+                    tw.Write(cd.Album + ",");
+                    tw.Write(cd.ReleaseYear + ",");
+                    tw.Write(cd.RunTime + ",");
+                    tw.Write(cd.Tracks + ",");
+                    tw.Write(cd.Location + ",");
+                    tw.Write("\n");
+                }
+                tw.Close();
+            }
+        }
+
     }
 }
