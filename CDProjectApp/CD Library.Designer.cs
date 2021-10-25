@@ -29,12 +29,12 @@ namespace CDProjectApp
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.shareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,8 +54,10 @@ namespace CDProjectApp
             this.tracksUpDown = new System.Windows.Forms.NumericUpDown();
             this.runTimeMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.saveCDList = new System.Windows.Forms.SaveFileDialog();
+            this.addDataButtonError = new System.Windows.Forms.ErrorProvider(this.components);
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tracksUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.addDataButtonError)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -76,7 +78,6 @@ namespace CDProjectApp
             this.newToolStripMenuItem,
             this.openToolStripMenuItem,
             this.saveToolStripMenuItem,
-            this.shareToolStripMenuItem,
             this.deleteToolStripMenuItem,
             this.closeToolStripMenuItem,
             this.exitToolStripMenuItem});
@@ -87,46 +88,40 @@ namespace CDProjectApp
             // newToolStripMenuItem
             // 
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.newToolStripMenuItem.Text = "New";
             this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.openToolStripMenuItem.Text = "Open";
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Enabled = false;
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
-            // 
-            // shareToolStripMenuItem
-            // 
-            this.shareToolStripMenuItem.Name = "shareToolStripMenuItem";
-            this.shareToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.shareToolStripMenuItem.Text = "Share";
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.deleteToolStripMenuItem.Text = "Delete";
             // 
             // closeToolStripMenuItem
             // 
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.closeToolStripMenuItem.Text = "Close";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
             // genreLabel
@@ -167,7 +162,8 @@ namespace CDProjectApp
             // 
             // addDataToListButton
             // 
-            this.addDataToListButton.Location = new System.Drawing.Point(317, 144);
+            this.addDataToListButton.Enabled = false;
+            this.addDataToListButton.Location = new System.Drawing.Point(292, 155);
             this.addDataToListButton.Name = "addDataToListButton";
             this.addDataToListButton.Size = new System.Drawing.Size(75, 23);
             this.addDataToListButton.TabIndex = 3;
@@ -304,6 +300,11 @@ namespace CDProjectApp
             this.saveCDList.FileName = "CD Library";
             this.saveCDList.Filter = "CSV files (*.csv)|*.csv";
             // 
+            // addDataButtonError
+            // 
+            this.addDataButtonError.ContainerControl = this;
+            this.addDataButtonError.Tag = "";
+            // 
             // CDLibrary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -328,10 +329,12 @@ namespace CDProjectApp
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CDLibrary";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CD Library";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tracksUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.addDataButtonError)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -344,7 +347,6 @@ namespace CDProjectApp
         private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem shareToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem closeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
@@ -364,6 +366,7 @@ namespace CDProjectApp
         private System.Windows.Forms.NumericUpDown tracksUpDown;
         private System.Windows.Forms.MaskedTextBox runTimeMaskedTextBox;
         private System.Windows.Forms.SaveFileDialog saveCDList;
+        private System.Windows.Forms.ErrorProvider addDataButtonError;
     }
 }
 
