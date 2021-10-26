@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;    //Allows files to be loaded and saved
 
 namespace CDProjectApp
 {
@@ -16,46 +17,80 @@ namespace CDProjectApp
         int currentReleaseYear, currentTracks;
         CD currentCD;      //Creates a new CD object
         List<CD> cdList;   //List of objects of the class CD is defined as class variable
-
         public CDLibrary()
         {
             InitializeComponent();
             cdList = new List<CD>();   //The list is created on program startup
         }
-
+        private void checkFieldsFilled()
+        {
+            if (!string.IsNullOrEmpty(currentGenre) && !string.IsNullOrEmpty(currentArtist) && !string.IsNullOrEmpty(currentAlbum)
+                && currentReleaseYear != 0 && !string.IsNullOrEmpty(currentRunTime) && currentTracks != 0 && !string.IsNullOrEmpty(currentLocation))
+            {
+                addDataToListButton.Enabled = true;
+            }
+            else
+            {
+                addDataToListButton.Enabled = false;    //In case a field becomes empty after all being filled
+            }
+        }
         private void genreComboBox_Leave(object sender, EventArgs e)
         {
             currentGenre = genreComboBox.Text;     //Current genre is whatever is selected in the genreComboBox
+            checkFieldsFilled();
         }
         private void artistTextBox_Leave(object sender, EventArgs e)
         {
             currentArtist = artistTextBox.Text;
+            checkFieldsFilled();
         }
         private void albumTextBox_Leave(object sender, EventArgs e)
         {
             currentAlbum = albumTextBox.Text;
+            checkFieldsFilled();
         }
         private void releaseMaskedTextBox_Leave(object sender, EventArgs e)
         {
-            currentReleaseYear = Int16.Parse(releaseMaskedTextBox.Text);    //String representation of int converted to int
+            if (!string.IsNullOrEmpty(releaseMaskedTextBox.Text))
+            {
+                currentReleaseYear = Convert.ToInt16(releaseMaskedTextBox.Text);    //String representation of int converted to int unless empty
+            }
+            checkFieldsFilled();
         }
         private void runTimeMaskedTextBox_Leave(object sender, EventArgs e)
         {
             currentRunTime = runTimeMaskedTextBox.Text;
+            checkFieldsFilled();
         }
         private void tracksUpDown_Leave(object sender, EventArgs e)
         {
-            currentTracks = (int)tracksUpDown.Value;    //Value associated with CD will be int, not decimal
+            currentTracks = Convert.ToInt16(tracksUpDown.Value);    //Value associated with CD will be int, not decimal
+            checkFieldsFilled();
         }
         private void locationTextBox_Leave(object sender, EventArgs e)
         {
             currentLocation = locationTextBox.Text;
+            checkFieldsFilled();
         }
         private void addDataToListButton_Click(object sender, EventArgs e)
         {
-            currentCD = new CD(currentGenre, currentArtist, currentAlbum, currentTracks, currentRunTime, currentLocation, currentReleaseYear);      //Creates new CD with current fields passed as args
-            cdList.Add(currentCD);      //Current CD added to CD list. Next we would display this list in a list box
-            saveToolStripMenuItem.Enabled = true;
+            bool duplicateCD = false;
+            foreach (CD cd in cdList)
+            {
+                if (currentArtist.Equals(cd.Artist) && currentAlbum.Equals(cd.Album))   //CD found to be duplicate if a CD in cdList has the same artist and album
+                {
+                    addDataButtonError.SetError(addDataToListButton, "CD of this name and artist already in library");
+                    duplicateCD = true;
+                    break;
+                }
+            }
+            if (duplicateCD == false)   //CD will only be added if it is not found to be a duplicate
+            {
+                addDataButtonError.Clear();
+                currentCD = new CD(currentGenre, currentArtist, currentAlbum, currentTracks, currentRunTime, currentLocation, currentReleaseYear);      //Creates new CD with current fields passed as args
+                cdList.Add(currentCD);      //Current CD added to CD list. Next we would display this list in a list box
+                saveToolStripMenuItem.Enabled = true;
+            }
         }
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -76,5 +111,24 @@ namespace CDProjectApp
             addDataToListButton.Visible = true;
             cdList = new List<CD>();
         }
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (saveCDList.ShowDialog() == DialogResult.OK)
+            {
+                TextWriter tw = new StreamWriter(saveCDList.FileName);
+                foreach (CD cd in cdList)
+                {
+                    tw.Write(cd.Genre + ",");
+                    tw.Write(cd.Artist + ",");
+                    tw.Write(cd.Album + ",");
+                    tw.Write(cd.ReleaseYear + ",");
+                    tw.Write(cd.RunTime + ",");
+                    tw.Write(cd.Tracks + ",");
+                    tw.Write(cd.Location + "\n");
+                }
+                tw.Close();
+            }
+        }
+
     }
 }
