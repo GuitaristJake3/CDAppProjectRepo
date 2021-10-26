@@ -55,6 +55,7 @@ namespace CDProjectApp
             this.runTimeMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.saveCDList = new System.Windows.Forms.SaveFileDialog();
             this.addDataButtonError = new System.Windows.Forms.ErrorProvider(this.components);
+            this.clearButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tracksUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addDataButtonError)).BeginInit();
@@ -305,11 +306,23 @@ namespace CDProjectApp
             this.addDataButtonError.ContainerControl = this;
             this.addDataButtonError.Tag = "";
             // 
+            // clearButton
+            // 
+            this.clearButton.Location = new System.Drawing.Point(292, 209);
+            this.clearButton.Name = "clearButton";
+            this.clearButton.Size = new System.Drawing.Size(75, 23);
+            this.clearButton.TabIndex = 16;
+            this.clearButton.Text = "Clear All";
+            this.clearButton.UseVisualStyleBackColor = true;
+            this.clearButton.Visible = false;
+            this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
+            // 
             // CDLibrary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(422, 320);
+            this.Controls.Add(this.clearButton);
             this.Controls.Add(this.runTimeMaskedTextBox);
             this.Controls.Add(this.tracksUpDown);
             this.Controls.Add(this.runTimeLabel);
@@ -367,6 +380,7 @@ namespace CDProjectApp
         private System.Windows.Forms.MaskedTextBox runTimeMaskedTextBox;
         private System.Windows.Forms.SaveFileDialog saveCDList;
         private System.Windows.Forms.ErrorProvider addDataButtonError;
+        private System.Windows.Forms.Button clearButton;
     }
 }
 

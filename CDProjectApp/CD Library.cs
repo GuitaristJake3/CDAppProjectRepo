@@ -24,8 +24,13 @@ namespace CDProjectApp
         }
         private void checkFieldsFilled()
         {
-            if (!string.IsNullOrEmpty(currentGenre) && !string.IsNullOrEmpty(currentArtist) && !string.IsNullOrEmpty(currentAlbum)
-                && currentReleaseYear != 0 && !string.IsNullOrEmpty(currentRunTime) && currentTracks != 0 && !string.IsNullOrEmpty(currentLocation))
+            if (!string.IsNullOrEmpty(currentGenre)
+                && !string.IsNullOrEmpty(currentArtist)
+                && !string.IsNullOrEmpty(currentAlbum)
+                && currentReleaseYear.ToString().Length == 4
+                && currentRunTime.Length == 5
+                && currentTracks != 0
+                && !string.IsNullOrEmpty(currentLocation))
             {
                 addDataToListButton.Enabled = true;
             }
@@ -92,6 +97,24 @@ namespace CDProjectApp
                 saveToolStripMenuItem.Enabled = true;
             }
         }
+        private void clearButton_Click(object sender, EventArgs e)
+        {
+            genreComboBox.Text = null;
+            artistTextBox.Text = null;
+            albumTextBox.Text = null;
+            releaseMaskedTextBox.Text = null;
+            runTimeMaskedTextBox.Text = null;
+            tracksUpDown.Value = 0;
+            locationTextBox.Text = null;
+            currentGenre = null;
+            currentArtist = null;
+            currentAlbum = null;
+            currentReleaseYear = 0;
+            currentRunTime = null;
+            currentTracks = 0;
+            currentLocation = null;
+            checkFieldsFilled();
+        }
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
         {
             genreComboBox.Visible = true;
@@ -109,6 +132,7 @@ namespace CDProjectApp
             runTimeLabel.Visible = true;
             runTimeMaskedTextBox.Visible = true;
             addDataToListButton.Visible = true;
+            clearButton.Visible = true;
             cdList = new List<CD>();
         }
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
@@ -129,6 +153,5 @@ namespace CDProjectApp
                 tw.Close();
             }
         }
-
     }
 }
