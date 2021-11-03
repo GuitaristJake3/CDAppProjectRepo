@@ -28,6 +28,7 @@ namespace CDProjectApp
                 && !string.IsNullOrEmpty(currentArtist)
                 && !string.IsNullOrEmpty(currentAlbum)
                 && currentReleaseYear.ToString().Length == 4
+                && !string.IsNullOrEmpty(currentRunTime)
                 && currentRunTime.Length == 5
                 && currentTracks != 0
                 && !string.IsNullOrEmpty(currentLocation))
