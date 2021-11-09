@@ -16,7 +16,7 @@ namespace CDProjectApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CDLibrary());
+            Application.Run(new Start());
         }
     }
 }
