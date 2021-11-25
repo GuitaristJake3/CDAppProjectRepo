@@ -19,8 +19,18 @@ namespace CDProjectApp
 
         private void newCDButton_Click(object sender, EventArgs e)
         {
-            CDLibrary newCD = new CDLibrary();
+            CDLibrary newCD = new CDLibrary();      //Opens form to add a new CD on click
             newCD.ShowDialog();
+        }
+
+        private void loadCDsButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void viewCDsButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
