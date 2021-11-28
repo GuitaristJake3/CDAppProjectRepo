@@ -34,6 +34,7 @@ namespace CDProjectApp
             this.welcomeLabel = new System.Windows.Forms.Label();
             this.loadCDsButton = new System.Windows.Forms.Button();
             this.madeByLabel = new System.Windows.Forms.Label();
+            this.openCDList = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
             // 
             // newCDButton
@@ -89,6 +90,12 @@ namespace CDProjectApp
             this.madeByLabel.TabIndex = 4;
             this.madeByLabel.Text = "Made by Jake Davies 2021";
             // 
+            // openCDList
+            // 
+            this.openCDList.FileName = "CD Library";
+            this.openCDList.DefaultExt = "csv";
+            this.openCDList.Filter = "CSV files (*.csv)|*.csv";
+            // 
             // Start
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -114,5 +121,6 @@ namespace CDProjectApp
         private System.Windows.Forms.Label welcomeLabel;
         private System.Windows.Forms.Button loadCDsButton;
         private System.Windows.Forms.Label madeByLabel;
+        private System.Windows.Forms.OpenFileDialog openCDList;
     }
 }

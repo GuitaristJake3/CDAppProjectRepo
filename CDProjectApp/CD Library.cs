@@ -146,10 +146,10 @@ namespace CDProjectApp
                     tw.Write(cd.Genre + ",");
                     tw.Write(cd.Artist + ",");
                     tw.Write(cd.Album + ",");
-                    tw.Write(cd.ReleaseYear + ",");
-                    tw.Write(cd.RunTime + ",");
                     tw.Write(cd.Tracks + ",");
-                    tw.Write(cd.Location + "\n");
+                    tw.Write(cd.RunTime + ",");
+                    tw.Write(cd.Location + ",");
+                    tw.Write(cd.ReleaseYear + "\n");
                 }
                 tw.Close();
             }
