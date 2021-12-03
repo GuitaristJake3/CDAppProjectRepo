@@ -63,11 +63,11 @@ namespace CDProjectApp
             // 
             this.welcomeLabel.AutoSize = true;
             this.welcomeLabel.Font = new System.Drawing.Font("Lucida Console", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.welcomeLabel.Location = new System.Drawing.Point(140, 61);
+            this.welcomeLabel.Location = new System.Drawing.Point(40, 62);
             this.welcomeLabel.Name = "welcomeLabel";
-            this.welcomeLabel.Size = new System.Drawing.Size(233, 27);
+            this.welcomeLabel.Size = new System.Drawing.Size(420, 27);
             this.welcomeLabel.TabIndex = 2;
-            this.welcomeLabel.Text = "My CD Library";
+            this.welcomeLabel.Text = "Welcome To My CD Library";
             this.welcomeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // loadCDsButton
