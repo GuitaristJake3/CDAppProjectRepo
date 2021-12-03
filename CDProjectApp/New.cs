@@ -11,16 +11,18 @@ using System.IO;        //Allows files to be loaded and saved
 
 namespace CDProjectApp
 {
-    public partial class CDLibrary : Form
+    public partial class New : Form
     {
         string currentGenre, currentArtist, currentAlbum, currentRunTime, currentLocation;
         int currentReleaseYear, currentTracks;
         CD currentCD;       //Creates a new CD object
         List<CD> cdList;        //List of objects of the class CD is declared as class variable
-        public CDLibrary()
+        public New(List<CD> cds)
         {
             InitializeComponent();
+            cdList = cds;
         }
+
         private void checkFieldsFilled()        //Will enable the add cd button if all fields have been filled
         {
             if (!string.IsNullOrEmpty(currentGenre)
@@ -39,21 +41,25 @@ namespace CDProjectApp
                 addDataToListButton.Enabled = false;        //In case a field becomes empty after all being filled
             }
         }
+
         private void genreComboBox_Leave(object sender, EventArgs e)
         {
             currentGenre = genreComboBox.Text;      //Current genre is defined as string selected in the genreComboBox
             checkFieldsFilled();
         }
+        
         private void artistTextBox_Leave(object sender, EventArgs e)
         {
             currentArtist = artistTextBox.Text;
             checkFieldsFilled();
         }
+        
         private void albumTextBox_Leave(object sender, EventArgs e)
         {
             currentAlbum = albumTextBox.Text;
             checkFieldsFilled();
         }
+        
         private void releaseMaskedTextBox_Leave(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(releaseMaskedTextBox.Text))
@@ -62,21 +68,25 @@ namespace CDProjectApp
             }
             checkFieldsFilled();
         }
+        
         private void runTimeMaskedTextBox_Leave(object sender, EventArgs e)
         {
             currentRunTime = runTimeMaskedTextBox.Text;
             checkFieldsFilled();
         }
+        
         private void tracksUpDown_Leave(object sender, EventArgs e)
         {
             currentTracks = Convert.ToInt16(tracksUpDown.Value);        //Value associated with CD will be int, not decimal
             checkFieldsFilled();
         }
+        
         private void locationTextBox_Leave(object sender, EventArgs e)
         {
             currentLocation = locationTextBox.Text;
             checkFieldsFilled();
         }
+        
         private void addDataToListButton_Click(object sender, EventArgs e)
         {
             bool duplicateCD = false;
@@ -97,6 +107,7 @@ namespace CDProjectApp
                 saveToolStripMenuItem.Enabled = true;
             }
         }
+        
         private void clearButton_Click(object sender, EventArgs e)      //Sets string fields to null and numerical fields to 0 on click
         {
             genreComboBox.Text = null;
@@ -115,6 +126,7 @@ namespace CDProjectApp
             currentLocation = null;
             checkFieldsFilled();
         }
+        
         private void newToolStripMenuItem_Click(object sender, EventArgs e)     //Makes fields visible and creates a new CD list. May be redundant in future
         {
             genreComboBox.Visible = true;
@@ -133,8 +145,8 @@ namespace CDProjectApp
             runTimeMaskedTextBox.Visible = true;
             addDataToListButton.Visible = true;
             clearButton.Visible = true;
-            cdList = new List<CD>();
         }
+        
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)        //Saves current cd list as a CSV file
         {
             if (saveCDList.ShowDialog() == DialogResult.OK)

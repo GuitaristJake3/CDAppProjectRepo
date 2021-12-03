@@ -22,7 +22,7 @@ namespace CDProjectApp
 
         private void newCDButton_Click(object sender, EventArgs e)      //Opens form to add a new CD on click
         {
-            CDLibrary newCD = new CDLibrary();
+            New newCD = new New(cdList);      //BUGFIX: Loaded cdList now accessible in other forms by passing it to constructors
             newCD.ShowDialog();
         }
 
@@ -41,9 +41,9 @@ namespace CDProjectApp
             }
         }
 
-        private void viewCDsButton_Click(object sender, EventArgs e)        //Opens form  to view loaded CDs
+        public void viewCDsButton_Click(object sender, EventArgs e)        //Opens form to view loaded CDs
         {
-            View viewCD = new View();
+            View viewCD = new View(cdList);
             viewCD.ShowDialog();
         }
     }

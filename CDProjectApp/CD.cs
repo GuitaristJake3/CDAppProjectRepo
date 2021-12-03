@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace CDProjectApp
 {
     //CD class will inherit from the General_Media class
-    class CD : General_Media
+    public class CD : General_Media
     {
         //Class fields are declared and are private
         string genre, artist, album;
@@ -37,6 +37,9 @@ namespace CDProjectApp
         {
             get { return tracks; }
         }
-
+        public CD CurrentCD
+        {
+            get { return this; }
+        }
     }
 }

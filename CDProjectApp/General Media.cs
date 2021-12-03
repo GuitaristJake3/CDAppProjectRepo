@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CDProjectApp
 {
-    class General_Media
+    public class General_Media
     {
         string runTime, location;
         int releaseYear; 

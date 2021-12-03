@@ -1,7 +1,7 @@
 ﻿
 namespace CDProjectApp
 {
-    partial class CDLibrary
+    partial class New
     {
         /// <summary>
         /// Required designer variable.
