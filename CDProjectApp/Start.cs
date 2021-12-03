@@ -22,7 +22,7 @@ namespace CDProjectApp
 
         private void newCDButton_Click(object sender, EventArgs e)      //Opens form to add a new CD on click
         {
-            CDLibrary newCD = new CDLibrary();
+            New newCD = new New(cdList);      //BUGFIX: Loaded cdList now accessible in other forms by passing it to constructors
             newCD.ShowDialog();
         }
 
@@ -34,16 +34,17 @@ namespace CDProjectApp
                 string line;
                 while ((line = tr.ReadLine()) != null)
                 {
-                    string[] cdInfo = line.Split(',');
+                    string[] cdInfo = line.Split(',');      //Creates an array of strings from each line of CSV file to make a CD object
                     CD currentCD = new CD(cdInfo[0], cdInfo[1], cdInfo[2], Convert.ToInt16(cdInfo[3]), cdInfo[4], cdInfo[5], Convert.ToInt16(cdInfo[6]));
                     cdList.Add(currentCD);
                 }
             }
         }
 
-        private void viewCDsButton_Click(object sender, EventArgs e)
+        public void viewCDsButton_Click(object sender, EventArgs e)        //Opens form to view loaded CDs
         {
-
+            View viewCD = new View(cdList);
+            viewCD.ShowDialog();
         }
     }
 }
