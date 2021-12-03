@@ -54,7 +54,7 @@ namespace CDProjectApp
             this.viewCDsButton.Location = new System.Drawing.Point(336, 140);
             this.viewCDsButton.Name = "viewCDsButton";
             this.viewCDsButton.Size = new System.Drawing.Size(100, 50);
-            this.viewCDsButton.TabIndex = 1;
+            this.viewCDsButton.TabIndex = 2;
             this.viewCDsButton.Text = "View My CDs";
             this.viewCDsButton.UseVisualStyleBackColor = true;
             this.viewCDsButton.Click += new System.EventHandler(this.viewCDsButton_Click);
@@ -76,7 +76,7 @@ namespace CDProjectApp
             this.loadCDsButton.Location = new System.Drawing.Point(197, 140);
             this.loadCDsButton.Name = "loadCDsButton";
             this.loadCDsButton.Size = new System.Drawing.Size(100, 50);
-            this.loadCDsButton.TabIndex = 3;
+            this.loadCDsButton.TabIndex = 1;
             this.loadCDsButton.Text = "Load CD Library";
             this.loadCDsButton.UseVisualStyleBackColor = true;
             this.loadCDsButton.Click += new System.EventHandler(this.loadCDsButton_Click);
@@ -92,8 +92,8 @@ namespace CDProjectApp
             // 
             // openCDList
             // 
-            this.openCDList.FileName = "CD Library";
             this.openCDList.DefaultExt = "csv";
+            this.openCDList.FileName = "CD Library";
             this.openCDList.Filter = "CSV files (*.csv)|*.csv";
             // 
             // Start
@@ -108,7 +108,7 @@ namespace CDProjectApp
             this.Controls.Add(this.newCDButton);
             this.Name = "Start";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Start";
+            this.Text = "Menu";
             this.ResumeLayout(false);
             this.PerformLayout();
 

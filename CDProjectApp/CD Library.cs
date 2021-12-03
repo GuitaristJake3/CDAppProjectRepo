@@ -20,7 +20,6 @@ namespace CDProjectApp
         public CDLibrary()
         {
             InitializeComponent();
-            cdList = new List<CD>();        //The list is created on program startup
         }
         private void checkFieldsFilled()        //Will enable the add cd button if all fields have been filled
         {
