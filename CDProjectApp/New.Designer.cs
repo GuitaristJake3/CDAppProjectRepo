@@ -32,7 +32,6 @@ namespace CDProjectApp
             this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -77,7 +76,6 @@ namespace CDProjectApp
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newToolStripMenuItem,
             this.openToolStripMenuItem,
             this.saveToolStripMenuItem,
             this.deleteToolStripMenuItem,
@@ -87,43 +85,36 @@ namespace CDProjectApp
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 22);
             this.fileToolStripMenuItem.Text = "File";
             // 
-            // newToolStripMenuItem
-            // 
-            this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
-            this.newToolStripMenuItem.Text = "New";
-            this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
-            // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.openToolStripMenuItem.Text = "Open";
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Enabled = false;
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.saveToolStripMenuItem.Text = "Save";
-            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.SaveToolStripMenuItem_Click);
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.deleteToolStripMenuItem.Text = "Delete";
             // 
             // closeToolStripMenuItem
             // 
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.closeToolStripMenuItem.Text = "Close";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
             // genreLabel
@@ -135,7 +126,6 @@ namespace CDProjectApp
             this.genreLabel.Size = new System.Drawing.Size(39, 13);
             this.genreLabel.TabIndex = 1;
             this.genreLabel.Text = "Genre:";
-            this.genreLabel.Visible = false;
             // 
             // genreComboBox
             // 
@@ -159,8 +149,7 @@ namespace CDProjectApp
             this.genreComboBox.Name = "genreComboBox";
             this.genreComboBox.Size = new System.Drawing.Size(100, 21);
             this.genreComboBox.TabIndex = 2;
-            this.genreComboBox.Visible = false;
-            this.genreComboBox.Leave += new System.EventHandler(this.genreComboBox_Leave);
+            this.genreComboBox.Leave += new System.EventHandler(this.GenreComboBox_Leave);
             // 
             // addDataToListButton
             // 
@@ -171,8 +160,7 @@ namespace CDProjectApp
             this.addDataToListButton.TabIndex = 3;
             this.addDataToListButton.Text = "Add Data";
             this.addDataToListButton.UseVisualStyleBackColor = true;
-            this.addDataToListButton.Visible = false;
-            this.addDataToListButton.Click += new System.EventHandler(this.addDataToListButton_Click);
+            this.addDataToListButton.Click += new System.EventHandler(this.AddDataToListButton_Click);
             // 
             // artistLabel
             // 
@@ -182,7 +170,6 @@ namespace CDProjectApp
             this.artistLabel.Size = new System.Drawing.Size(65, 13);
             this.artistLabel.TabIndex = 4;
             this.artistLabel.Text = "Album Artist:";
-            this.artistLabel.Visible = false;
             // 
             // albumLabel
             // 
@@ -192,7 +179,6 @@ namespace CDProjectApp
             this.albumLabel.Size = new System.Drawing.Size(62, 13);
             this.albumLabel.TabIndex = 5;
             this.albumLabel.Text = "Album Title:";
-            this.albumLabel.Visible = false;
             // 
             // releaseLabel
             // 
@@ -202,7 +188,6 @@ namespace CDProjectApp
             this.releaseLabel.Size = new System.Drawing.Size(74, 13);
             this.releaseLabel.TabIndex = 6;
             this.releaseLabel.Text = "Release Year:";
-            this.releaseLabel.Visible = false;
             // 
             // artistTextBox
             // 
@@ -211,8 +196,7 @@ namespace CDProjectApp
             this.artistTextBox.Name = "artistTextBox";
             this.artistTextBox.Size = new System.Drawing.Size(100, 20);
             this.artistTextBox.TabIndex = 7;
-            this.artistTextBox.Visible = false;
-            this.artistTextBox.Leave += new System.EventHandler(this.artistTextBox_Leave);
+            this.artistTextBox.Leave += new System.EventHandler(this.ArtistTextBox_Leave);
             // 
             // albumTextBox
             // 
@@ -221,8 +205,7 @@ namespace CDProjectApp
             this.albumTextBox.Name = "albumTextBox";
             this.albumTextBox.Size = new System.Drawing.Size(100, 20);
             this.albumTextBox.TabIndex = 8;
-            this.albumTextBox.Visible = false;
-            this.albumTextBox.Leave += new System.EventHandler(this.albumTextBox_Leave);
+            this.albumTextBox.Leave += new System.EventHandler(this.AlbumTextBox_Leave);
             // 
             // releaseMaskedTextBox
             // 
@@ -232,8 +215,7 @@ namespace CDProjectApp
             this.releaseMaskedTextBox.Size = new System.Drawing.Size(101, 20);
             this.releaseMaskedTextBox.TabIndex = 9;
             this.releaseMaskedTextBox.ValidatingType = typeof(System.DateTime);
-            this.releaseMaskedTextBox.Visible = false;
-            this.releaseMaskedTextBox.Leave += new System.EventHandler(this.releaseMaskedTextBox_Leave);
+            this.releaseMaskedTextBox.Leave += new System.EventHandler(this.ReleaseMaskedTextBox_Leave);
             // 
             // locationLabel
             // 
@@ -243,7 +225,6 @@ namespace CDProjectApp
             this.locationLabel.Size = new System.Drawing.Size(51, 13);
             this.locationLabel.TabIndex = 10;
             this.locationLabel.Text = "Location:";
-            this.locationLabel.Visible = false;
             // 
             // locationTextBox
             // 
@@ -252,8 +233,7 @@ namespace CDProjectApp
             this.locationTextBox.Name = "locationTextBox";
             this.locationTextBox.Size = new System.Drawing.Size(101, 20);
             this.locationTextBox.TabIndex = 11;
-            this.locationTextBox.Visible = false;
-            this.locationTextBox.Leave += new System.EventHandler(this.locationTextBox_Leave);
+            this.locationTextBox.Leave += new System.EventHandler(this.LocationTextBox_Leave);
             // 
             // tracksLabel
             // 
@@ -263,7 +243,6 @@ namespace CDProjectApp
             this.tracksLabel.Size = new System.Drawing.Size(95, 13);
             this.tracksLabel.TabIndex = 12;
             this.tracksLabel.Text = "Number of Tracks:";
-            this.tracksLabel.Visible = false;
             // 
             // runTimeLabel
             // 
@@ -273,7 +252,6 @@ namespace CDProjectApp
             this.runTimeLabel.Size = new System.Drawing.Size(56, 13);
             this.runTimeLabel.TabIndex = 13;
             this.runTimeLabel.Text = "Run Time:";
-            this.runTimeLabel.Visible = false;
             // 
             // tracksUpDown
             // 
@@ -281,8 +259,7 @@ namespace CDProjectApp
             this.tracksUpDown.Name = "tracksUpDown";
             this.tracksUpDown.Size = new System.Drawing.Size(101, 20);
             this.tracksUpDown.TabIndex = 14;
-            this.tracksUpDown.Visible = false;
-            this.tracksUpDown.Leave += new System.EventHandler(this.tracksUpDown_Leave);
+            this.tracksUpDown.Leave += new System.EventHandler(this.TracksUpDown_Leave);
             // 
             // runTimeMaskedTextBox
             // 
@@ -292,8 +269,7 @@ namespace CDProjectApp
             this.runTimeMaskedTextBox.Size = new System.Drawing.Size(100, 20);
             this.runTimeMaskedTextBox.TabIndex = 15;
             this.runTimeMaskedTextBox.ValidatingType = typeof(int);
-            this.runTimeMaskedTextBox.Visible = false;
-            this.runTimeMaskedTextBox.Leave += new System.EventHandler(this.runTimeMaskedTextBox_Leave);
+            this.runTimeMaskedTextBox.Leave += new System.EventHandler(this.RunTimeMaskedTextBox_Leave);
             // 
             // saveCDList
             // 
@@ -315,8 +291,7 @@ namespace CDProjectApp
             this.clearButton.TabIndex = 16;
             this.clearButton.Text = "Clear All";
             this.clearButton.UseVisualStyleBackColor = true;
-            this.clearButton.Visible = false;
-            this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
+            this.clearButton.Click += new System.EventHandler(this.ClearButton_Click);
             // 
             // newLabel
             // 
@@ -328,7 +303,7 @@ namespace CDProjectApp
             this.newLabel.TabIndex = 17;
             this.newLabel.Text = "Add New CD";
             // 
-            // CDLibrary
+            // New
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -353,7 +328,7 @@ namespace CDProjectApp
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "CDLibrary";
+            this.Name = "New";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CD Library";
             this.menuStrip1.ResumeLayout(false);
@@ -369,7 +344,6 @@ namespace CDProjectApp
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
