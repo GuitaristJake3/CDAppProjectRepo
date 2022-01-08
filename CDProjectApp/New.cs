@@ -57,8 +57,8 @@ namespace CDProjectApp
         /// <summary>
         /// currentGenre is defined as string selected in genreComboBox upon losing focus
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">The genere comboBox</param>
+        /// <param name="e">Empty</param>
         private void GenreComboBox_Leave(object sender, EventArgs e)
         {
             currentGenre = genreComboBox.Text;
@@ -67,8 +67,8 @@ namespace CDProjectApp
         /// <summary>
         /// currentArtist is defined as string in artistTextBox upon losing focus
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">The artist textBox</param>
+        /// <param name="e">Empty</param>
         private void ArtistTextBox_Leave(object sender, EventArgs e)
         {
             currentArtist = artistTextBox.Text;
@@ -77,8 +77,8 @@ namespace CDProjectApp
         /// <summary>
         /// currentAlbum is defined as string in albumTextBox upon losing focus
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">The album textBox</param>
+        /// <param name="e">Empty</param>
         private void AlbumTextBox_Leave(object sender, EventArgs e)
         {
             currentAlbum = albumTextBox.Text;
@@ -87,8 +87,8 @@ namespace CDProjectApp
         /// <summary>
         /// currentReleaseYear is defined as integer in releaseMaskedTextBox upon losing focus
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">The realease year maskedTextBox</param>
+        /// <param name="e">Empty</param>
         private void ReleaseMaskedTextBox_Leave(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(releaseMaskedTextBox.Text))
@@ -100,8 +100,8 @@ namespace CDProjectApp
         /// <summary>
         /// currentRunTime is defined as string in runTimeMaskedTextBox upon losing focus
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">The run time maskedTextBox</param>
+        /// <param name="e">Empty</param>
         private void RunTimeMaskedTextBox_Leave(object sender, EventArgs e)
         {
             currentRunTime = runTimeMaskedTextBox.Text;
@@ -110,8 +110,8 @@ namespace CDProjectApp
         /// <summary>
         /// currentTracks is defined as integer in tracksUpDown upon losing focus
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">The number of tracks numericUpDown</param>
+        /// <param name="e">Empty</param>
         private void TracksUpDown_Leave(object sender, EventArgs e)
         {
             currentTracks = Convert.ToInt16(tracksUpDown.Value);        //Value associated with CD will be int, not decimal
@@ -120,8 +120,8 @@ namespace CDProjectApp
         /// <summary>
         /// currentLocation is defined as string in location TextBox upon losing focus
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">The location textBox</param>
+        /// <param name="e">Empty</param>
         private void LocationTextBox_Leave(object sender, EventArgs e)
         {
             currentLocation = locationTextBox.Text;
@@ -131,8 +131,8 @@ namespace CDProjectApp
         /// Creates a currentCD object and adds it to cdList if it is not found to be a duplicate when clicked.
         /// This enables saveToolStripMenuItem
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">The Add Data button</param>
+        /// <param name="e">Empty</param>
         private void AddDataToListButton_Click(object sender, EventArgs e)
         {
             bool duplicateCD = false;
@@ -156,8 +156,8 @@ namespace CDProjectApp
         /// <summary>
         /// Controls and fields are all set to null or 0 when clicked
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">The Clear button</param>
+        /// <param name="e">Empty</param>
         private void ClearButton_Click(object sender, EventArgs e)      //Sets string fields to null and numerical fields to 0 on click
         {
             genreComboBox.Text = null;
@@ -179,8 +179,8 @@ namespace CDProjectApp
         /// <summary>
         /// Displays a saveFileDialog to save the current cdList field to a CSV file
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">The Save toolStripMenuItem</param>
+        /// <param name="e">Empty</param>
         private void SaveToolStripMenuItem_Click(object sender, EventArgs e)        //Saves current cd list as a CSV file
         {
             if (saveCDList.ShowDialog() == DialogResult.OK)

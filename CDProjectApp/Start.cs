@@ -30,8 +30,8 @@ namespace CDProjectApp
         /// Displays form to add a new CD to the library when the 'Add New CD' button is clicked.
         /// The loaded CD list is passed as an argument to the constructor
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">The Add New CD button</param>
+        /// <param name="e">Empty</param>
         private void NewCDButton_Click(object sender, EventArgs e)
         {
             New newCD = new New(cdList);      //BUGFIX: Loaded cdList now accessible in other forms by passing it to constructors
@@ -40,8 +40,8 @@ namespace CDProjectApp
         /// <summary>
         /// Displays an openFileDialog to select a CSV file to open which will populate cdList
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">The Load CD Library button</param>
+        /// <param name="e">Empty</param>
         private void LoadCDsButton_Click(object sender, EventArgs e)
         {
             if (openCDList.ShowDialog() == DialogResult.OK)
@@ -59,8 +59,8 @@ namespace CDProjectApp
         /// <summary>
         /// Displays a form to view all the CDs which are currently in the library
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">The View My CDs button</param>
+        /// <param name="e">Empty</param>
         public void ViewCDsButton_Click(object sender, EventArgs e)        //Opens form to view loaded CDs
         {
             View viewCD = new View(cdList);
