@@ -11,22 +11,38 @@ using System.IO;        //Allows files to be loaded and saved
 
 namespace CDProjectApp
 {
+    /// <summary>
+    /// A form which appears on startup with buttons to add, load and view CDs.
+    /// It has a cdList field which is defined when a list is loaded from a file
+    /// </summary>
     public partial class Start : Form
     {
-        List<CD> cdList;        //List of objects of the class CD is declared as class variable
+        List<CD> cdList;
+        /// <summary>
+        /// Constructor initialises the form and instantiates an empty list for CDs
+        /// </summary>
         public Start()
         {
             InitializeComponent();
-            cdList = new List<CD>();        //The list is created on program startup
+            cdList = new List<CD>();
         }
-
-        private void newCDButton_Click(object sender, EventArgs e)      //Opens form to add a new CD on click
+        /// <summary>
+        /// Displays form to add a new CD to the library when the 'Add New CD' button is clicked.
+        /// The loaded CD list is passed as an argument to the constructor
+        /// </summary>
+        /// <param name="sender">The Add New CD button</param>
+        /// <param name="e">Empty</param>
+        private void NewCDButton_Click(object sender, EventArgs e)
         {
             New newCD = new New(cdList);      //BUGFIX: Loaded cdList now accessible in other forms by passing it to constructors
             newCD.ShowDialog();
         }
-
-        private void loadCDsButton_Click(object sender, EventArgs e)        //Opens a dialog to open a CSV file of CD information
+        /// <summary>
+        /// Displays an openFileDialog to select a CSV file to open which will populate cdList
+        /// </summary>
+        /// <param name="sender">The Load CD Library button</param>
+        /// <param name="e">Empty</param>
+        private void LoadCDsButton_Click(object sender, EventArgs e)
         {
             if (openCDList.ShowDialog() == DialogResult.OK)
             {
@@ -40,8 +56,12 @@ namespace CDProjectApp
                 }
             }
         }
-
-        public void viewCDsButton_Click(object sender, EventArgs e)        //Opens form to view loaded CDs
+        /// <summary>
+        /// Displays a form to view all the CDs which are currently in the library
+        /// </summary>
+        /// <param name="sender">The View My CDs button</param>
+        /// <param name="e">Empty</param>
+        public void ViewCDsButton_Click(object sender, EventArgs e)        //Opens form to view loaded CDs
         {
             View viewCD = new View(cdList);
             viewCD.ShowDialog();

@@ -11,19 +11,32 @@ using System.IO;        //Allows files to be loaded and saved
 
 namespace CDProjectApp
 {
+    /// <summary>
+    /// A form to add a new CD to the library using various controls.
+    /// It has fields for each variable that will be used to make a new CD object.
+    /// It has a field for the current CD being created.
+    /// It has a cdList field which is defined by the constructor
+    /// </summary>
     public partial class New : Form
     {
         string currentGenre, currentArtist, currentAlbum, currentRunTime, currentLocation;
         int currentReleaseYear, currentTracks;
-        CD currentCD;       //Creates a new CD object
-        List<CD> cdList;        //List of objects of the class CD is declared as class variable
+        CD currentCD;
+        List<CD> cdList;
+        /// <summary>
+        /// Constructor initialises the form and takes a parameter that is the loaded list of CDs
+        /// </summary>
+        /// <param name="cds">The list of CDs that was loaded on the Start form</param>
         public New(List<CD> cds)
         {
             InitializeComponent();
             cdList = cds;
         }
-
-        private void checkFieldsFilled()        //Will enable the add cd button if all fields have been filled
+        /// <summary>
+        /// Enables the 'Add Data' button once all form fields have a value which is not null.
+        /// The release year must be a 4 digit integer, the run time must have the format 00:00 and the number of tracks must be > 0
+        /// </summary>
+        private void CheckFieldsFilled()
         {
             if (!string.IsNullOrEmpty(currentGenre)
                 && !string.IsNullOrEmpty(currentArtist)
@@ -41,53 +54,86 @@ namespace CDProjectApp
                 addDataToListButton.Enabled = false;        //In case a field becomes empty after all being filled
             }
         }
-
-        private void genreComboBox_Leave(object sender, EventArgs e)
+        /// <summary>
+        /// currentGenre is defined as string selected in genreComboBox upon losing focus
+        /// </summary>
+        /// <param name="sender">The genere comboBox</param>
+        /// <param name="e">Empty</param>
+        private void GenreComboBox_Leave(object sender, EventArgs e)
         {
-            currentGenre = genreComboBox.Text;      //Current genre is defined as string selected in the genreComboBox
-            checkFieldsFilled();
+            currentGenre = genreComboBox.Text;
+            CheckFieldsFilled();
         }
-        
-        private void artistTextBox_Leave(object sender, EventArgs e)
+        /// <summary>
+        /// currentArtist is defined as string in artistTextBox upon losing focus
+        /// </summary>
+        /// <param name="sender">The artist textBox</param>
+        /// <param name="e">Empty</param>
+        private void ArtistTextBox_Leave(object sender, EventArgs e)
         {
             currentArtist = artistTextBox.Text;
-            checkFieldsFilled();
+            CheckFieldsFilled();
         }
-        
-        private void albumTextBox_Leave(object sender, EventArgs e)
+        /// <summary>
+        /// currentAlbum is defined as string in albumTextBox upon losing focus
+        /// </summary>
+        /// <param name="sender">The album textBox</param>
+        /// <param name="e">Empty</param>
+        private void AlbumTextBox_Leave(object sender, EventArgs e)
         {
             currentAlbum = albumTextBox.Text;
-            checkFieldsFilled();
+            CheckFieldsFilled();
         }
-        
-        private void releaseMaskedTextBox_Leave(object sender, EventArgs e)
+        /// <summary>
+        /// currentReleaseYear is defined as integer in releaseMaskedTextBox upon losing focus
+        /// </summary>
+        /// <param name="sender">The realease year maskedTextBox</param>
+        /// <param name="e">Empty</param>
+        private void ReleaseMaskedTextBox_Leave(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(releaseMaskedTextBox.Text))
             {
                 currentReleaseYear = Convert.ToInt16(releaseMaskedTextBox.Text);        //String representation of int converted to int unless empty
             }
-            checkFieldsFilled();
+            CheckFieldsFilled();
         }
-        
-        private void runTimeMaskedTextBox_Leave(object sender, EventArgs e)
+        /// <summary>
+        /// currentRunTime is defined as string in runTimeMaskedTextBox upon losing focus
+        /// </summary>
+        /// <param name="sender">The run time maskedTextBox</param>
+        /// <param name="e">Empty</param>
+        private void RunTimeMaskedTextBox_Leave(object sender, EventArgs e)
         {
             currentRunTime = runTimeMaskedTextBox.Text;
-            checkFieldsFilled();
+            CheckFieldsFilled();
         }
-        
-        private void tracksUpDown_Leave(object sender, EventArgs e)
+        /// <summary>
+        /// currentTracks is defined as integer in tracksUpDown upon losing focus
+        /// </summary>
+        /// <param name="sender">The number of tracks numericUpDown</param>
+        /// <param name="e">Empty</param>
+        private void TracksUpDown_Leave(object sender, EventArgs e)
         {
             currentTracks = Convert.ToInt16(tracksUpDown.Value);        //Value associated with CD will be int, not decimal
-            checkFieldsFilled();
+            CheckFieldsFilled();
         }
-        
-        private void locationTextBox_Leave(object sender, EventArgs e)
+        /// <summary>
+        /// currentLocation is defined as string in location TextBox upon losing focus
+        /// </summary>
+        /// <param name="sender">The location textBox</param>
+        /// <param name="e">Empty</param>
+        private void LocationTextBox_Leave(object sender, EventArgs e)
         {
             currentLocation = locationTextBox.Text;
-            checkFieldsFilled();
+            CheckFieldsFilled();
         }
-        
-        private void addDataToListButton_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Creates a currentCD object and adds it to cdList if it is not found to be a duplicate when clicked.
+        /// This enables saveToolStripMenuItem
+        /// </summary>
+        /// <param name="sender">The Add Data button</param>
+        /// <param name="e">Empty</param>
+        private void AddDataToListButton_Click(object sender, EventArgs e)
         {
             bool duplicateCD = false;
             foreach (CD cd in cdList)
@@ -107,8 +153,12 @@ namespace CDProjectApp
                 saveToolStripMenuItem.Enabled = true;
             }
         }
-        
-        private void clearButton_Click(object sender, EventArgs e)      //Sets string fields to null and numerical fields to 0 on click
+        /// <summary>
+        /// Controls and fields are all set to null or 0 when clicked
+        /// </summary>
+        /// <param name="sender">The Clear button</param>
+        /// <param name="e">Empty</param>
+        private void ClearButton_Click(object sender, EventArgs e)      //Sets string fields to null and numerical fields to 0 on click
         {
             genreComboBox.Text = null;
             artistTextBox.Text = null;
@@ -124,30 +174,14 @@ namespace CDProjectApp
             currentRunTime = null;
             currentTracks = 0;
             currentLocation = null;
-            checkFieldsFilled();
+            CheckFieldsFilled();
         }
-        
-        private void newToolStripMenuItem_Click(object sender, EventArgs e)     //Makes fields visible and creates a new CD list. May be redundant in future
-        {
-            genreComboBox.Visible = true;
-            genreLabel.Visible = true;
-            artistLabel.Visible = true;
-            artistTextBox.Visible = true;
-            albumLabel.Visible = true;
-            albumTextBox.Visible = true;
-            releaseLabel.Visible = true;
-            releaseMaskedTextBox.Visible = true;
-            locationLabel.Visible = true;
-            locationTextBox.Visible = true;
-            tracksLabel.Visible = true;
-            tracksUpDown.Visible = true;
-            runTimeLabel.Visible = true;
-            runTimeMaskedTextBox.Visible = true;
-            addDataToListButton.Visible = true;
-            clearButton.Visible = true;
-        }
-        
-        private void saveToolStripMenuItem_Click(object sender, EventArgs e)        //Saves current cd list as a CSV file
+        /// <summary>
+        /// Displays a saveFileDialog to save the current cdList field to a CSV file
+        /// </summary>
+        /// <param name="sender">The Save toolStripMenuItem</param>
+        /// <param name="e">Empty</param>
+        private void SaveToolStripMenuItem_Click(object sender, EventArgs e)        //Saves current cd list as a CSV file
         {
             if (saveCDList.ShowDialog() == DialogResult.OK)
             {

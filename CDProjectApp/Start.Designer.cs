@@ -46,7 +46,7 @@ namespace CDProjectApp
             this.newCDButton.TabIndex = 0;
             this.newCDButton.Text = "Add New\r\nCD";
             this.newCDButton.UseVisualStyleBackColor = true;
-            this.newCDButton.Click += new System.EventHandler(this.newCDButton_Click);
+            this.newCDButton.Click += new System.EventHandler(this.NewCDButton_Click);
             // 
             // viewCDsButton
             // 
@@ -57,7 +57,7 @@ namespace CDProjectApp
             this.viewCDsButton.TabIndex = 2;
             this.viewCDsButton.Text = "View My CDs";
             this.viewCDsButton.UseVisualStyleBackColor = true;
-            this.viewCDsButton.Click += new System.EventHandler(this.viewCDsButton_Click);
+            this.viewCDsButton.Click += new System.EventHandler(this.ViewCDsButton_Click);
             // 
             // welcomeLabel
             // 
@@ -79,7 +79,7 @@ namespace CDProjectApp
             this.loadCDsButton.TabIndex = 1;
             this.loadCDsButton.Text = "Load CD Library";
             this.loadCDsButton.UseVisualStyleBackColor = true;
-            this.loadCDsButton.Click += new System.EventHandler(this.loadCDsButton_Click);
+            this.loadCDsButton.Click += new System.EventHandler(this.LoadCDsButton_Click);
             // 
             // madeByLabel
             // 

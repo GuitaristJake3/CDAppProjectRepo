@@ -6,13 +6,27 @@ using System.Threading.Tasks;
 
 namespace CDProjectApp
 {
-    //CD class will inherit from the General_Media class
-    public class CD : General_Media
+    /// <summary>
+    /// This will inherit from the General_Media class and will make CD objects to go into a CD list.
+    /// It is made public so may be accessed by different forms
+    /// </summary>
+    public class CD : GeneralMedia
     {
-        //Class fields are declared and are private
+        /// <summary>
+        /// Class fields that are not inherited are declared and are private
+        /// </summary>
         string genre, artist, album;
         int tracks;
-        //Define a constructor based on values we should have
+        /// <summary>
+        /// A constructor is defined which will pass field values to each CD as it is made
+        /// </summary>
+        /// <param name="g">The genre of the music</param>
+        /// <param name="ar">Album artist. Will be a unique identifier with album</param>
+        /// <param name="al">Album title. Will be a unique identifier with artist</param>
+        /// <param name="t">The number of tracks</param>
+        /// <param name="rt">The run time of the CD(inherited)</param>
+        /// <param name="l">The physical location of the CD(inherited)</param>
+        /// <param name="ry">The year the CD was released(inherited)</param>
         public CD(string g, string ar, string al, int t, string rt, string l, int ry) : base(rt, l, ry)
         {
             genre = g;
@@ -20,7 +34,9 @@ namespace CDProjectApp
             album = al;
             tracks = t;
         }
-        //Accessors allow private class fields to be accessed
+        /// <summary>
+        /// Accessors allow private class fields to be accessed indirectly so they may not be modified
+        /// </summary>
         public string Genre
         {
             get { return genre; }
@@ -36,10 +52,6 @@ namespace CDProjectApp
         public int Tracks
         {
             get { return tracks; }
-        }
-        public CD CurrentCD
-        {
-            get { return this; }
         }
     }
 }
