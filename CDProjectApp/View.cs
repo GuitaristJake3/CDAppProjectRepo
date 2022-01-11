@@ -17,6 +17,7 @@ namespace CDProjectApp
     public partial class View : Form
     {
         List<CD> cdList;
+        CD selectedCD;
         /// <summary>
         /// Constructor initialises the form and takes a parameter that is the loaded list of CDs
         /// </summary>
@@ -31,19 +32,31 @@ namespace CDProjectApp
         /// </summary>
         /// <param name="sender">This form</param>
         /// <param name="e">Empty</param>
+        
         private void View_Shown(object sender, EventArgs e)
         {
             foreach (CD cd in cdList)
             {
-                ListViewItem currentCD = new ListViewItem();
-                currentCD.SubItems.Add(cd.Genre);
-                currentCD.SubItems.Add(cd.Artist);
-                currentCD.SubItems.Add(cd.Album);
-                currentCD.SubItems.Add(cd.ReleaseYear.ToString());
-                currentCD.SubItems.Add(cd.RunTime);
-                currentCD.SubItems.Add(cd.Tracks.ToString());
-                currentCD.SubItems.Add(cd.Location);
+                string[] cdInfo = { null, cd.Genre, cd.Artist, cd.Album, cd.ReleaseYear.ToString(), cd.RunTime, cd.Tracks.ToString(), cd.Location };
+                ListViewItem currentCD = new ListViewItem(cdInfo);
                 cdListView.Items.Add(currentCD);
+            }
+        }
+        /// <summary>
+        /// Selects a CD from the cdList based on the listView item that was checked
+        /// </summary>
+        /// <param name="sender">The CD listView</param>
+        /// <param name="e">Data for the checked item</param>
+        private void CDListView_ItemChecked(object sender, ItemCheckedEventArgs e)
+        {
+            if (e.Item.Checked == true)
+            {
+                selectedCD = new CD(e.Item.SubItems[1].Text, e.Item.SubItems[2].Text, e.Item.SubItems[3].Text, Convert.ToInt16(e.Item.SubItems[4].Text),
+                e.Item.SubItems[5].Text, e.Item.SubItems[7].Text, Convert.ToInt16(e.Item.SubItems[6].Text));
+            }
+            else
+            {
+                selectedCD = null;
             }
         }
     }
