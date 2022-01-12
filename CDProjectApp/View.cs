@@ -18,6 +18,7 @@ namespace CDProjectApp
     {
         List<CD> cdList;
         CD selectedCD;
+        ListViewItem selectedItem;
         /// <summary>
         /// Constructor initialises the form and takes a parameter that is the loaded list of CDs
         /// </summary>
@@ -53,10 +54,28 @@ namespace CDProjectApp
             {
                 selectedCD = new CD(e.Item.SubItems[1].Text, e.Item.SubItems[2].Text, e.Item.SubItems[3].Text, Convert.ToInt16(e.Item.SubItems[4].Text),
                 e.Item.SubItems[5].Text, e.Item.SubItems[7].Text, Convert.ToInt16(e.Item.SubItems[6].Text));
+                selectedItem = e.Item;
             }
             else
             {
                 selectedCD = null;
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void DeleteButton_Click(object sender, EventArgs e)
+        {
+            foreach (CD cd in cdList)
+            {
+                if (cd.Artist == selectedCD.Artist && cd.Album == selectedCD.Album)
+                {
+                    cdList.Remove(cd);
+                    cdListView.Items.Remove(selectedItem);
+                    break;
+                }
             }
         }
     }

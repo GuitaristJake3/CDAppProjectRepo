@@ -129,6 +129,7 @@ namespace CDProjectApp
             this.deleteButton.TabIndex = 1;
             this.deleteButton.Text = "Delete CD";
             this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
             // View
             // 
