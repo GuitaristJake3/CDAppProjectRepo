@@ -61,7 +61,7 @@ namespace CDProjectApp
         /// </summary>
         /// <param name="sender">The View My CDs button</param>
         /// <param name="e">Empty</param>
-        public void ViewCDsButton_Click(object sender, EventArgs e)        //Opens form to view loaded CDs
+        public void ViewCDsButton_Click(object sender, EventArgs e)
         {
             View viewCD = new View(cdList);
             viewCD.ShowDialog();

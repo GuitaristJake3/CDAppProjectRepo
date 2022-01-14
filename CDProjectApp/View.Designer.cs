@@ -67,6 +67,7 @@ namespace CDProjectApp
             this.location});
             this.cdListView.HideSelection = false;
             this.cdListView.Location = new System.Drawing.Point(12, 79);
+            this.cdListView.MultiSelect = false;
             this.cdListView.Name = "cdListView";
             this.cdListView.Size = new System.Drawing.Size(724, 325);
             this.cdListView.TabIndex = 0;

@@ -62,10 +62,10 @@ namespace CDProjectApp
             }
         }
         /// <summary>
-        /// 
+        /// Removes selected CD from cdList and the CD listView
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">The Delete CD button</param>
+        /// <param name="e">Empty</param>
         private void DeleteButton_Click(object sender, EventArgs e)
         {
             foreach (CD cd in cdList)
