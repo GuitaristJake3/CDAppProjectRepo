@@ -31,7 +31,7 @@ namespace CDProjectApp
         {
             this.viewLabel = new System.Windows.Forms.Label();
             this.cdListView = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.selected = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.genre = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.artist = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.album = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -39,6 +39,7 @@ namespace CDProjectApp
             this.runTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tracks = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.location = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.deleteButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // viewLabel
@@ -54,8 +55,9 @@ namespace CDProjectApp
             // 
             // cdListView
             // 
+            this.cdListView.CheckBoxes = true;
             this.cdListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
+            this.selected,
             this.genre,
             this.artist,
             this.album,
@@ -65,15 +67,18 @@ namespace CDProjectApp
             this.location});
             this.cdListView.HideSelection = false;
             this.cdListView.Location = new System.Drawing.Point(12, 79);
+            this.cdListView.MultiSelect = false;
             this.cdListView.Name = "cdListView";
-            this.cdListView.Size = new System.Drawing.Size(702, 325);
-            this.cdListView.TabIndex = 1;
+            this.cdListView.Size = new System.Drawing.Size(724, 325);
+            this.cdListView.TabIndex = 0;
             this.cdListView.UseCompatibleStateImageBehavior = false;
             this.cdListView.View = System.Windows.Forms.View.Details;
+            this.cdListView.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.CDListView_ItemChecked);
             // 
-            // columnHeader1
+            // selected
             // 
-            this.columnHeader1.Width = 0;
+            this.selected.Text = "";
+            this.selected.Width = 23;
             // 
             // genre
             // 
@@ -117,11 +122,22 @@ namespace CDProjectApp
             this.location.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.location.Width = 100;
             // 
+            // deleteButton
+            // 
+            this.deleteButton.Location = new System.Drawing.Point(91, 36);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(75, 23);
+            this.deleteButton.TabIndex = 1;
+            this.deleteButton.Text = "Delete CD";
+            this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
+            // 
             // View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(726, 416);
+            this.ClientSize = new System.Drawing.Size(748, 416);
+            this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.cdListView);
             this.Controls.Add(this.viewLabel);
             this.Name = "View";
@@ -144,6 +160,7 @@ namespace CDProjectApp
         private System.Windows.Forms.ColumnHeader runTime;
         private System.Windows.Forms.ColumnHeader tracks;
         private System.Windows.Forms.ColumnHeader location;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader selected;
+        private System.Windows.Forms.Button deleteButton;
     }
 }

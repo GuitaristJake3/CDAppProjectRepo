@@ -30,7 +30,7 @@ namespace CDProjectApp
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.newMenuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,22 +56,22 @@ namespace CDProjectApp
             this.addDataButtonError = new System.Windows.Forms.ErrorProvider(this.components);
             this.clearButton = new System.Windows.Forms.Button();
             this.newLabel = new System.Windows.Forms.Label();
-            this.menuStrip1.SuspendLayout();
+            this.newMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tracksUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addDataButtonError)).BeginInit();
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // newMenuStrip
             // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newMenuStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.newMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
-            this.menuStrip1.Size = new System.Drawing.Size(422, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
+            this.newMenuStrip.Location = new System.Drawing.Point(0, 0);
+            this.newMenuStrip.Name = "newMenuStrip";
+            this.newMenuStrip.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
+            this.newMenuStrip.Size = new System.Drawing.Size(422, 24);
+            this.newMenuStrip.TabIndex = 0;
+            this.newMenuStrip.Text = "menuStrip1";
             // 
             // fileToolStripMenuItem
             // 
@@ -325,14 +325,14 @@ namespace CDProjectApp
             this.Controls.Add(this.addDataToListButton);
             this.Controls.Add(this.genreComboBox);
             this.Controls.Add(this.genreLabel);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
+            this.Controls.Add(this.newMenuStrip);
+            this.MainMenuStrip = this.newMenuStrip;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "New";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CD Library";
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.newMenuStrip.ResumeLayout(false);
+            this.newMenuStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tracksUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.addDataButtonError)).EndInit();
             this.ResumeLayout(false);
@@ -342,7 +342,7 @@ namespace CDProjectApp
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip newMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
