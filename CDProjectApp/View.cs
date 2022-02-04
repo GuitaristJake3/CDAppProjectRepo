@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CDProjectApp
@@ -17,8 +11,8 @@ namespace CDProjectApp
     public partial class View : Form
     {
         List<CD> cdList;
-        CD selectedCD;
-        ListViewItem selectedItem;
+        List<CD> selectedCDs;
+        List<ListViewItem> selectedItems;
         /// <summary>
         /// Constructor initialises the form and takes a parameter that is the loaded list of CDs
         /// </summary>
@@ -27,13 +21,15 @@ namespace CDProjectApp
         {
             InitializeComponent();
             cdList = cds;
+            selectedCDs = new List<CD>();
+            selectedItems = new List<ListViewItem>();
         }
         /// <summary>
         /// Displays each CD read from the CSV file in a listView when the form displays
         /// </summary>
         /// <param name="sender">This form</param>
         /// <param name="e">Empty</param>
-        
+
         private void View_Shown(object sender, EventArgs e)
         {
             foreach (CD cd in cdList)
@@ -52,13 +48,21 @@ namespace CDProjectApp
         {
             if (e.Item.Checked == true)
             {
-                selectedCD = new CD(e.Item.SubItems[1].Text, e.Item.SubItems[2].Text, e.Item.SubItems[3].Text, Convert.ToInt16(e.Item.SubItems[4].Text),
-                e.Item.SubItems[5].Text, e.Item.SubItems[7].Text, Convert.ToInt16(e.Item.SubItems[6].Text));
-                selectedItem = e.Item;
+                selectedCDs.Add(new CD(e.Item.SubItems[1].Text, e.Item.SubItems[2].Text, e.Item.SubItems[3].Text, Convert.ToInt16(e.Item.SubItems[4].Text),
+                e.Item.SubItems[5].Text, e.Item.SubItems[7].Text, Convert.ToInt16(e.Item.SubItems[6].Text)));
+                selectedItems.Add(e.Item);
             }
             else
             {
-                selectedCD = null;
+                selectedItems.Remove(e.Item);
+                foreach (CD cd in selectedCDs)
+                {
+                    if (cd.Artist == e.Item.SubItems[2].Text && cd.Album == e.Item.SubItems[3].Text)
+                    {
+                        selectedCDs.Remove(cd);
+                        break;
+                    }
+                }
             }
         }
         /// <summary>
@@ -68,14 +72,20 @@ namespace CDProjectApp
         /// <param name="e">Empty</param>
         private void DeleteButton_Click(object sender, EventArgs e)
         {
-            foreach (CD cd in cdList)
+            foreach (CD selectedCD in selectedCDs)
             {
-                if (cd.Artist == selectedCD.Artist && cd.Album == selectedCD.Album)
+                foreach (CD cd in cdList)
                 {
-                    cdList.Remove(cd);
-                    cdListView.Items.Remove(selectedItem);
-                    break;
+                    if (cd.Artist == selectedCD.Artist && cd.Album == selectedCD.Album)
+                    {
+                        cdList.Remove(cd);
+                        break;
+                    }
                 }
+            }   
+            foreach (ListViewItem selectedItem in selectedItems)
+            {
+                cdListView.Items.Remove(selectedItem);
             }
         }
     }
