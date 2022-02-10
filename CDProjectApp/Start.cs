@@ -48,11 +48,21 @@ namespace CDProjectApp
             {
                 TextReader tr = new StreamReader(openCDList.FileName);
                 string line;
-                while ((line = tr.ReadLine()) != null)
+                try
                 {
-                    string[] cdInfo = line.Split(',');      //Creates an array of strings from each line of CSV file to make a CD object
-                    CD currentCD = new CD(cdInfo[0], cdInfo[1], cdInfo[2], Convert.ToInt16(cdInfo[3]), cdInfo[4], cdInfo[5], Convert.ToInt16(cdInfo[6]));
-                    cdList.Add(currentCD);
+                    while ((line = tr.ReadLine()) != null)
+                    {
+                        string[] cdInfo = line.Split(',');      //Creates an array of strings from each line of CSV file to make a CD object
+                        CD currentCD = new CD(cdInfo[0], cdInfo[1], cdInfo[2], Convert.ToInt16(cdInfo[3]), cdInfo[4], cdInfo[5], Convert.ToInt16(cdInfo[6]));
+                        cdList.Add(currentCD);
+                    }
+                    loadCDsButton.Enabled = false;
+                    loadCDButtonError.Clear();
+                    loadLabel.Visible = true;
+                }
+                catch
+                {
+                    loadCDButtonError.SetError(loadCDsButton, "Invalid format of CSV file");
                 }
             }
         }

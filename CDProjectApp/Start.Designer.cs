@@ -29,12 +29,16 @@ namespace CDProjectApp
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.newCDButton = new System.Windows.Forms.Button();
             this.viewCDsButton = new System.Windows.Forms.Button();
             this.welcomeLabel = new System.Windows.Forms.Label();
             this.loadCDsButton = new System.Windows.Forms.Button();
             this.madeByLabel = new System.Windows.Forms.Label();
             this.openCDList = new System.Windows.Forms.OpenFileDialog();
+            this.loadCDButtonError = new System.Windows.Forms.ErrorProvider(this.components);
+            this.loadLabel = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.loadCDButtonError)).BeginInit();
             this.SuspendLayout();
             // 
             // newCDButton
@@ -96,11 +100,28 @@ namespace CDProjectApp
             this.openCDList.FileName = "CD Library";
             this.openCDList.Filter = "CSV files (*.csv)|*.csv";
             // 
+            // loadCDButtonError
+            // 
+            this.loadCDButtonError.ContainerControl = this;
+            // 
+            // loadLabel
+            // 
+            this.loadLabel.AutoSize = true;
+            this.loadLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loadLabel.ForeColor = System.Drawing.Color.Green;
+            this.loadLabel.Location = new System.Drawing.Point(160, 195);
+            this.loadLabel.Name = "loadLabel";
+            this.loadLabel.Size = new System.Drawing.Size(170, 16);
+            this.loadLabel.TabIndex = 5;
+            this.loadLabel.Text = "Library loaded successfully";
+            this.loadLabel.Visible = false;
+            // 
             // Start
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(514, 259);
+            this.Controls.Add(this.loadLabel);
             this.Controls.Add(this.madeByLabel);
             this.Controls.Add(this.loadCDsButton);
             this.Controls.Add(this.welcomeLabel);
@@ -109,6 +130,7 @@ namespace CDProjectApp
             this.Name = "Start";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
+            ((System.ComponentModel.ISupportInitialize)(this.loadCDButtonError)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -122,5 +144,7 @@ namespace CDProjectApp
         private System.Windows.Forms.Button loadCDsButton;
         private System.Windows.Forms.Label madeByLabel;
         private System.Windows.Forms.OpenFileDialog openCDList;
+        private System.Windows.Forms.ErrorProvider loadCDButtonError;
+        private System.Windows.Forms.Label loadLabel;
     }
 }
