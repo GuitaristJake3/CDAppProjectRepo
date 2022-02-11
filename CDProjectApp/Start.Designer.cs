@@ -130,7 +130,7 @@ namespace CDProjectApp
             // startMainLabel
             // 
             this.startMainLabel.AutoSize = true;
-            this.startMainLabel.Location = new System.Drawing.Point(39, 75);
+            this.startMainLabel.Location = new System.Drawing.Point(39, 67);
             this.startMainLabel.Name = "startMainLabel";
             this.startMainLabel.Size = new System.Drawing.Size(407, 26);
             this.startMainLabel.TabIndex = 6;

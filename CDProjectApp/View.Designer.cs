@@ -40,17 +40,19 @@ namespace CDProjectApp
             this.tracks = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.location = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.deleteButton = new System.Windows.Forms.Button();
+            this.viewMainLabel = new System.Windows.Forms.Label();
+            this.editButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // viewLabel
             // 
             this.viewLabel.AutoSize = true;
             this.viewLabel.Font = new System.Drawing.Font("Lucida Console", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.viewLabel.Location = new System.Drawing.Point(259, 22);
+            this.viewLabel.Location = new System.Drawing.Point(215, 30);
             this.viewLabel.Name = "viewLabel";
-            this.viewLabel.Size = new System.Drawing.Size(233, 27);
+            this.viewLabel.Size = new System.Drawing.Size(318, 27);
             this.viewLabel.TabIndex = 0;
-            this.viewLabel.Text = "My CD Library";
+            this.viewLabel.Text = "View My CD Library";
             this.viewLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // cdListView
@@ -66,7 +68,7 @@ namespace CDProjectApp
             this.tracks,
             this.location});
             this.cdListView.HideSelection = false;
-            this.cdListView.Location = new System.Drawing.Point(12, 79);
+            this.cdListView.Location = new System.Drawing.Point(12, 102);
             this.cdListView.MultiSelect = false;
             this.cdListView.Name = "cdListView";
             this.cdListView.Size = new System.Drawing.Size(724, 325);
@@ -124,22 +126,52 @@ namespace CDProjectApp
             // 
             // deleteButton
             // 
-            this.deleteButton.Location = new System.Drawing.Point(91, 36);
+            this.deleteButton.BackColor = System.Drawing.Color.LightCoral;
+            this.deleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.deleteButton.Font = new System.Drawing.Font("Bahnschrift Condensed", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteButton.Location = new System.Drawing.Point(433, 439);
             this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(75, 23);
-            this.deleteButton.TabIndex = 1;
-            this.deleteButton.Text = "Delete CD";
-            this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Size = new System.Drawing.Size(100, 60);
+            this.deleteButton.TabIndex = 0;
+            this.deleteButton.TabStop = false;
+            this.deleteButton.Text = "Delete CDs";
+            this.deleteButton.UseVisualStyleBackColor = false;
             this.deleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
+            // 
+            // viewMainLabel
+            // 
+            this.viewMainLabel.AutoSize = true;
+            this.viewMainLabel.Location = new System.Drawing.Point(39, 67);
+            this.viewMainLabel.Name = "viewMainLabel";
+            this.viewMainLabel.Size = new System.Drawing.Size(671, 13);
+            this.viewMainLabel.TabIndex = 2;
+            this.viewMainLabel.Text = "Here you can view all the CDs you have saved. Sort, search them using the control" +
+    "s below or use the buttons to edit or delete selected ones.";
+            // 
+            // editButton
+            // 
+            this.editButton.BackColor = System.Drawing.Color.Khaki;
+            this.editButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.editButton.Font = new System.Drawing.Font("Bahnschrift Condensed", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editButton.Location = new System.Drawing.Point(220, 439);
+            this.editButton.Name = "editButton";
+            this.editButton.Size = new System.Drawing.Size(100, 60);
+            this.editButton.TabIndex = 0;
+            this.editButton.TabStop = false;
+            this.editButton.Text = "Edit a CD";
+            this.editButton.UseVisualStyleBackColor = false;
             // 
             // View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(748, 416);
+            this.ClientSize = new System.Drawing.Size(748, 511);
+            this.Controls.Add(this.editButton);
+            this.Controls.Add(this.viewMainLabel);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.cdListView);
             this.Controls.Add(this.viewLabel);
+            this.MaximizeBox = false;
             this.Name = "View";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "View My CDs";
@@ -162,5 +194,7 @@ namespace CDProjectApp
         private System.Windows.Forms.ColumnHeader location;
         private System.Windows.Forms.ColumnHeader selected;
         private System.Windows.Forms.Button deleteButton;
+        private System.Windows.Forms.Label viewMainLabel;
+        private System.Windows.Forms.Button editButton;
     }
 }
