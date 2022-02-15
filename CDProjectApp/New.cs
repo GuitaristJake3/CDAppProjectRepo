@@ -107,6 +107,17 @@ namespace CDProjectApp
             currentRunTime = runTimeMaskedTextBox.Text;
             CheckFieldsFilled();
         }
+
+        private void newLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void New_Load(object sender, EventArgs e)
+        {
+
+        }
+
         /// <summary>
         /// currentTracks is defined as integer in tracksUpDown upon losing focus
         /// </summary>

@@ -171,6 +171,7 @@ namespace CDProjectApp
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.cdListView);
             this.Controls.Add(this.viewLabel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "View";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
